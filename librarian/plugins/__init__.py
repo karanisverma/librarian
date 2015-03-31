@@ -21,19 +21,13 @@ INSTALLED = {}
 DASHBOARD = []
 
 
-def is_pkg(path):
-    init = os.path.join(path, '__init__.py')
-    return os.path.isdir(path) and os.path.isfile(init)
+def get_plugin_list(conf, config_param):
+    return [p.strip().lower()
+            for p in conf.get(config_param, '').split(',')]
 
 
-def list_plugins():
-    plugins = []
-    for p in os.listdir(PLUGINS_PATH):
-        pkgdir = os.path.join(PLUGINS_PATH, p)
-        if not is_pkg(pkgdir):
-            continue
-        plugins.append(p)
-    return plugins
+def get_module_path(module):
+    return os.path.dirname(os.path.abspath(module.__file__))
 
 
 def route_plugin(app, mod):
@@ -65,18 +59,18 @@ def route_plugin(app, mod):
     return _route_plugin
 
 
-def install_views(mod):
+def install_views(mod_path):
     """ Add view lookup path if plugin has views directory
 
-    :param mod:  module name
+    :param mod_path:  absolute path to module
     """
-    view_path = os.path.join(PLUGINS_PATH, mod, 'views')
+    view_path = os.path.join(mod_path, 'views')
     if not os.path.isdir(view_path):
         return
     bottle.TEMPLATE_PATH.insert(1, view_path)
 
 
-def install_static(app, mod):
+def install_static(app, mod_name, mod_path):
     """ Add routes for plugin static if plugin contains a static directory
 
     All routes are mapped to urls that start with ``/s/`` prefix followed by
@@ -87,61 +81,61 @@ def install_static(app, mod):
     suffix added to the module name. Fof a module called ``foo``, the route
     name is ``plugins:foo:static``.
 
-    :param app:  application object
-    :param mod:  module name
+    :param app:       application object
+    :param mod_name:  module name
+    :param mod_path:  absolute path to module
     """
-    static_path = os.path.join(PLUGINS_PATH, mod, 'static')
+    static_path = os.path.join(mod_path, 'static')
     if not os.path.isdir(static_path):
         return
 
     def _route_plugin_static(path):
         return static_file(path, static_path)
-    _route_plugin_static.__name__ = '_route_%s_static' % mod
+    _route_plugin_static.__name__ = '_route_%s_static' % mod_name
 
-    app.route('/s/%s/<path:path>' % mod, 'GET', _route_plugin_static,
-              name='plugins:%s:static' % mod, no_i18n=True)
+    app.route('/s/%s/<path:path>' % mod_name, 'GET', _route_plugin_static,
+              name='plugins:%s:static' % mod_name, no_i18n=True)
 
 
 def install_plugins(app):
-    plugins = list_plugins()
     conf = app.config
-    to_install = [p for p in plugins if conf.get('plugins.%s' % p) == 'yes']
-    dashboard = [p.strip().lower()
-                 for p in conf.get('dashboard.plugins', '').split(',')]
-
+    to_install = get_plugin_list(conf, 'plugins.enabled')
+    dashboard = get_plugin_list(conf, 'dashboard.plugins')
     # Import each plugin module and initialize it
-    for mod in to_install:
+    for mod_name in to_install:
         try:
-            plugin = __import__('librarian.plugins.%s.plugin' % mod,
-                                fromlist=['plugin'])
-            logging.debug("Plugin '%s' loaded", mod)
-        except ImportError as err:
+            plugin = getattr(__import__(mod_name, fromlist=['plugin']),
+                             'plugin')
+            logging.debug("Plugin '%s' loaded", mod_name)
+        except (ImportError, AttributeError) as err:
             logging.error("Plugin '%s' could not be loaded, skipping (reason: "
-                          "%s)", mod, err)
+                          "%s)", mod_name, err)
             continue
         except NotSupportedError as err:
             logging.error(
-                "Plugin '%s' not supported, skipping (reason: %s)", mod,
+                "Plugin '%s' not supported, skipping (reason: %s)", mod_name,
                 err.reason)
             continue
 
         try:
-            plugin.install(app, route_plugin(app, mod))
+            plugin.install(app, route_plugin(app, mod_name))
         except NotSupportedError as err:
             logging.error(
-                "Plugin '%s' not supported, skipping (reason: %s)", mod,
+                "Plugin '%s' not supported, skipping (reason: %s)", mod_name,
                 err.reason)
             continue
         except AttributeError:
+            print('attrerror')
             logging.error("Plugin '%s' not correctly implemented, skipping",
-                          mod)
+                          mod_name)
             continue
 
-        install_views(mod)
-        install_static(app, mod)
+        mod_path = get_module_path(plugin)
+        install_views(mod_path)
+        install_static(app, mod_name, mod_path)
 
-        INSTALLED[mod] = plugin
-        logging.info('Installed plugin %s', mod)
+        INSTALLED[mod_name] = plugin
+        logging.info('Installed plugin %s', mod_name)
 
     # Install dashboard plugins for plugins that have them
     logging.debug("Installing dashboard plugins: %s", ', '.join(dashboard))
