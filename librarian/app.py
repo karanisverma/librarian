@@ -48,6 +48,7 @@ from librarian.utils import setup
 from librarian.utils import commands
 from librarian.utils import migrations
 from librarian.utils.repl import start_repl
+from librarian.utils.splash import splash_server
 from librarian.utils.system import ensure_dir
 from librarian.utils.routing import add_routes
 from librarian.utils.timer import request_timer
@@ -309,6 +310,7 @@ def start(databases, config, no_auth=False, repl=False, debug=False):
     # We are passing the ``wsgiapp`` object here because that's the one that
     # contains the I18N middleware. If we pass ``app`` object, then we won't
     # have the I18N middleware active at all.
+    splash_server.stop()
     servers.start_server('librarian', config, wsgiapp)
 
     if repl:
@@ -365,6 +367,7 @@ def main(args):
         pprint.pprint(app.config, indent=4)
         sys.exit(0)
 
+    splash_server.start(conf)
     databases = prestart(conf, args.log, args.debug)
     commands.select_command(args, databases, conf)
     return start(databases, conf, args.no_auth, args.repl, args.debug)
