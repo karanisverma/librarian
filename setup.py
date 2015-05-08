@@ -48,10 +48,13 @@ DEPS = read_reqs(REQPATH)
 
 def rebuild_catalogs():
     import subprocess
-    import platform
-    needs_shell = platform.system = 'Windows'
-    subprocess.call('python scripts/cmpmsgs.py librarian/locales',
-                    shell=needs_shell)
+    subprocess.call('python scripts/cmpmsgs.py librarian/locales', shell=True)
+
+
+def rebuild_static(sdist=False):
+    import subprocess
+    cmd = ('build', 'dist')[sdist]
+    subprocess.check_call(['grunt', cmd])
 
 
 def clean_pyc():
@@ -91,11 +94,13 @@ class Develop(DevelopCommand):
     def run(self):
         DevelopCommand.run(self)
         rebuild_catalogs()
+        rebuild_static()
 
 
 class Package(SdistCommand):
     def run(self):
         rebuild_catalogs()
+        rebuild_static(sdist=True)
         clean_pyc()
         SdistCommand.run(self)
 
