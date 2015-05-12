@@ -356,6 +356,7 @@ def configure_argparse(parser):
 
 
 def main(args):
+    logging.error('main test')
     app.config = ConfDict.from_file(args.conf, catchall=True, autojson=True)
     conf = app.config
     app.setup = setup.Setup(conf['setup.file'])

@@ -98,6 +98,8 @@ def filter_content(multipage=None):
 @roca_view('content_list', '_content_list', template_func=template)
 def content_list():
     """ Show list of content """
+    print('test list of content')
+    logging.error('content_list: theres no error :D')
     result = filter_content()
     result.update({'base_path': i18n_url('content:list'),
                    'page_title': _('Library'),
@@ -160,6 +162,8 @@ def content_zipball(content_id):
 @view('reader')
 @with_content
 def content_reader(meta):
+    print('with_content test')
+    loggin.error('with_content: there's no error :D')
     """ Loads the reader interface """
     archive = open_archive()
     archive.add_view(meta.md5)
