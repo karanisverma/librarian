@@ -14,11 +14,7 @@
 (function (window, $) {
 
   // Check if string.prototype.[end|start]swith()
-<<<<<<< HEAD
   if (!String.prototype.startsWith || !String.prototype.endsWith) {
-=======
-  if (!String.prototype.startsWith | !String.prototype.endsWith) {
->>>>>>> fix/with-polyfill
     String.prototype.startsWith = function(searchString, position) {
       position = position || 0;
       return this.lastIndexOf(searchString, position) === position;
