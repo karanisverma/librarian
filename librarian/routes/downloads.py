@@ -140,3 +140,10 @@ def manage_downloads():
                     page_title=title,
                     message=message,
                     redirect=url)
+
+
+def routes(app):
+    return (
+        ('downloads:list', list_downloads, 'GET', '/downloads/', {}),
+        ('downloads:action', manage_downloads, 'POST', '/downloads/', {}),
+    )
