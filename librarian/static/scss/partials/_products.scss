@@ -69,7 +69,7 @@ $web-2x: sprite-map('web_icons/2x/*.png', $spacing: 60px);
         top: -2px;
         @include with-hdpi('icons', 'cart_rev', yes);
         &:hover {
-          @include with-hdpi('icons', 'cart_hover_rev', yes);
+          @include with-hdpi('icons', 'cart_rev_hover', yes);
         }
       }
       .label {
