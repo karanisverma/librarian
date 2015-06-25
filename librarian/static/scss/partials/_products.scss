@@ -2,6 +2,12 @@
 @import "outernet/mixins/fonts";
 @import "switch";
 
+$web: sprite-map('web_icons/1x/*.png', $spacing: 30px);
+$web-2x: sprite-map('web_icons/2x/*.png', $spacing: 60px);
+@mixin web-icon($name, $dimensions: yes) {
+  @include sprite($web, $web-2x, $name, $dimensions);
+}
+
 .products {
   hr {
     border: 0 none;
@@ -31,26 +37,20 @@
     min-height: 400px;
   }
 
-  .pic-col.lantern1 {
-    background-image: image-url('librarian/lantern1.jpg');
-    width: 50%;
-  }
-
-  .pic-col.lantern2 {
-    background-image: image-url('librarian/lantern2.jpg');
-    width: 50%;
+  .pic-col.lantern {
+    background-image: image-url('web_misc/howto_lantern.jpg');
   }
 
   .pic-col.pillar {
-    background-image: image-url('librarian/lantern3.jpg');
+    background-image: image-url('web_misc/howto_pillar.jpg');
   }
 
   .pic-col.diy {
-    background-image: image-url('librarian/lantern2.jpg');
+    background-image: image-url('web_misc/howto_diy.jpg');
   }
 
   .pic-col.usb-stb {
-    background-image: image-url('librarian/lantern1.jpg');
+    background-image: image-url('web_misc/howto_usb.jpg');
   }
 
   .h-bar {
@@ -61,15 +61,57 @@
     }
   }
 
-  .overview label {
-    font-weight: normal;
-    display: inline-block;
+  .button {
+    .buy {
+      position: relative;
+      .icon {
+        position: absolute;
+        top: -2px;
+        @include with-hdpi('icons', 'cart_rev', yes);
+        &:hover {
+          @include with-hdpi('icons', 'cart_hover_rev', yes);
+        }
+      }
+      .label {
+        margin-left: 35px;
+      }
+    }
+  }
+
+  .overview {
+    margin: 30px 0;
+    label {
+      font-weight: normal;
+      display: inline-block;
+      margin: 0 20px;
+      cursor: auto;
+      .icon {
+        margin-right: 10px;
+      }
+      &.quantity .icon {
+        @include web-icon('howto_items_sub');
+      }
+      &.price .icon {
+        @include web-icon('howto_dollar_sub');
+      }
+      &.time .icon {
+        @include web-icon('howto_time_sub');
+      }
+    }
   }
 
   .items {
     text-align: left;
     .buy {
       float: right;
+      .icon {
+        display: inline-block;
+        vertical-align: middle;
+        @include with-hdpi('icons', 'cart', yes);
+        &:hover {
+          @include with-hdpi('icons', 'cart_hover', yes);
+        }
+      }
     }
   }
 

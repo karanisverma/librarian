@@ -13,14 +13,14 @@ ${library_submenu.body()}
         <h1 class="main">${_("Lantern (by Outernet)")}</h1>
         <p class="description">${_("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc.")}</p>
         <p class="overview">
-            <label class="quantity"><span class="icon">${_("1 item")}</label>
-            <label class="time"><span class="icon">${_("10 minutes")}</label>
-            <label class="price"><span class="icon">${_("$70")}</label>
+            <label class="quantity"><span class="icon"></span>${_("1 item")}</label>
+            <label class="time"><span class="icon"></span>${_("10 minutes")}</label>
+            <label class="price"><span class="icon"></span>${_("$70")}</label>
         </p>
     </div>
 
     <div class="pic-row">
-        <div class="pic-col lantern1"></div><div class="pic-col lantern2"></div>
+        <div class="pic-col lantern"></div>
     </div>
 
     <div class="h-bar narrower white details">
