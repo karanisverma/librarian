@@ -3,12 +3,14 @@
 <%namespace name='content_list' file='_content_list.tpl'/>
 <%namespace name='library_submenu' file='_library_submenu.tpl'/>
 <%namespace name='tag_js_templates' file='_tag_js_templates.tpl'/>
+<%namespace name='introduction' file='flatpages/introduction.tpl'/>
 
 <%block name="title">
 ${page_title}
 </%block>
 
 ${library_submenu.body()}
+${introduction.body()}
 
 <div class="h-bar">
     <form id="search" class="search">

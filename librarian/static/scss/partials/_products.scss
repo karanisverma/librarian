@@ -1,0 +1,93 @@
+@import "outernet/mixins/colors";
+@import "outernet/mixins/fonts";
+@import "switch";
+
+.products {
+  hr {
+    border: 0 none;
+    border-top: 1px solid $border;
+  }
+
+  .narrower {
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+
+  .title {
+    .main {
+      font-size: 250%;
+    }
+    .sub {
+      color: $sub;
+      margin-top: 0;
+    }
+  }
+
+  .pic-col {
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 100%;
+    min-height: 400px;
+  }
+
+  .pic-col.lantern1 {
+    background-image: image-url('librarian/lantern1.jpg');
+    width: 50%;
+  }
+
+  .pic-col.lantern2 {
+    background-image: image-url('librarian/lantern2.jpg');
+    width: 50%;
+  }
+
+  .pic-col.pillar {
+    background-image: image-url('librarian/lantern3.jpg');
+  }
+
+  .pic-col.diy {
+    background-image: image-url('librarian/lantern2.jpg');
+  }
+
+  .pic-col.usb-stb {
+    background-image: image-url('librarian/lantern1.jpg');
+  }
+
+  .h-bar {
+    border: 0 none;
+    padding-bottom: 40px;
+    &.white {
+      background: $white;
+    }
+  }
+
+  .overview label {
+    font-weight: normal;
+    display: inline-block;
+  }
+
+  .items {
+    text-align: left;
+    .buy {
+      float: right;
+    }
+  }
+
+  .optional {
+    color: $sun;
+  }
+
+  .more-info {
+    margin-top: 40px;
+  }
+
+  .complete {
+    padding-top: 40px;
+    .icon {
+      display: inline-block;
+      @include icon('done');
+      margin-bottom: 1em;
+    }
+  }
+}
+

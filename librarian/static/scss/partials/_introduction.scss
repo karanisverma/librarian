@@ -1,0 +1,24 @@
+@import "compass/typography";
+@import "sprites";
+
+.introduction {
+  background: $sky25d;
+  color: $white;
+  text-align: center;
+  padding: 60px 20px;
+
+  .logo {
+    @include misc-icon('logo');
+    @include hide-text;
+    margin-bottom: 3em;
+  }
+
+  .button.cta.white {
+    color: $white;
+    border-color: $white;
+  }
+  .button.cta.white:hover {
+    color: $sun;
+    background-color: $white;
+  }
+}

@@ -835,11 +835,11 @@ input[type="text"].positive, input[type="numeric"].positive, input[type="email"]
   padding-right: 50px;
   background-position: right 12.5px top 50%;
   background-repeat: no-repeat;
-  background-image: url('../img/icons/1x/form_positive.png?1435157553'); }
+  background-image: url('../img/icons/1x/form_positive.png?1435166101'); }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min-resolution: 120dpi), only screen and (min-resolution: 1.3dppx) {
   /* line 63, ../scss/outernet/partial/_forms.scss */
   input[type="text"].positive, input[type="numeric"].positive, input[type="email"].positive, input[type="password"].positive, input[type="file"].positive {
-    background-image: url('../img/icons/2x/form_positive.png?1435157553');
+    background-image: url('../img/icons/2x/form_positive.png?1435166101');
     -moz-background-size: 25px, 25px;
     -o-background-size: 25px, 25px;
     -webkit-background-size: 25px, 25px;
@@ -849,11 +849,11 @@ input[type="text"].negative, input[type="numeric"].negative, input[type="email"]
   padding-right: 50px;
   background-position: right 12.5px top 50%;
   background-repeat: no-repeat;
-  background-image: url('../img/icons/1x/form_negative.png?1435157553'); }
+  background-image: url('../img/icons/1x/form_negative.png?1435166101'); }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min-resolution: 120dpi), only screen and (min-resolution: 1.3dppx) {
   /* line 67, ../scss/outernet/partial/_forms.scss */
   input[type="text"].negative, input[type="numeric"].negative, input[type="email"].negative, input[type="password"].negative, input[type="file"].negative {
-    background-image: url('../img/icons/2x/form_negative.png?1435157553');
+    background-image: url('../img/icons/2x/form_negative.png?1435166101');
     -moz-background-size: 25px, 25px;
     -o-background-size: 25px, 25px;
     -webkit-background-size: 25px, 25px;
@@ -902,11 +902,11 @@ input[type="checkbox"]:checked + label:before {
   transition: color 0.3s, background-color 0.3s, border-color 0.3s;
   background-position: center center;
   background-repeat: no-repeat;
-  background-image: url('../img/icons/1x/checkmark.png?1435157553'); }
+  background-image: url('../img/icons/1x/checkmark.png?1435166101'); }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min-resolution: 120dpi), only screen and (min-resolution: 1.3dppx) {
   /* line 88, ../scss/outernet/partial/_forms.scss */
   input[type="checkbox"]:checked + label:before {
-    background-image: url('../img/icons/2x/checkmark.png?1435157553');
+    background-image: url('../img/icons/2x/checkmark.png?1435166101');
     -moz-background-size: 25px, 25px;
     -o-background-size: 25px, 25px;
     -webkit-background-size: 25px, 25px;
@@ -931,11 +931,11 @@ input[type="checkbox"]:focus + label:before {
 input[type="checkbox"]:focus:checked + label:before {
   background-position: center center;
   background-repeat: no-repeat;
-  background-image: url('../img/icons/1x/checkmark_active.png?1435157553'); }
+  background-image: url('../img/icons/1x/checkmark_active.png?1435166101'); }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min-resolution: 120dpi), only screen and (min-resolution: 1.3dppx) {
   /* line 101, ../scss/outernet/partial/_forms.scss */
   input[type="checkbox"]:focus:checked + label:before {
-    background-image: url('../img/icons/2x/checkmark_active.png?1435157553');
+    background-image: url('../img/icons/2x/checkmark_active.png?1435166101');
     -moz-background-size: 25px, 25px;
     -o-background-size: 25px, 25px;
     -webkit-background-size: 25px, 25px;
@@ -964,25 +964,25 @@ select {
   padding-right: 50px;
   background-repeat: no-repeat;
   background-position: right 10px top 50%;
-  background-image: url('../img/icons/1x/dropdown_open.png?1435157553'); }
+  background-image: url('../img/icons/1x/dropdown_open.png?1435166101'); }
 /* line 125, ../scss/outernet/mixins/_forms.scss */
 select::-ms-expand {
   display: none; }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min-resolution: 120dpi), only screen and (min-resolution: 1.3dppx) {
   /* line 115, ../scss/outernet/partial/_forms.scss */
   select {
-    background-image: url('../img/icons/2x/dropdown_open.png?1435157553');
+    background-image: url('../img/icons/2x/dropdown_open.png?1435166101');
     -moz-background-size: 25px, 25px;
     -o-background-size: 25px, 25px;
     -webkit-background-size: 25px, 25px;
     background-size: 25px, 25px; } }
 /* line 123, ../scss/outernet/partial/_forms.scss */
 select:hover {
-  background-image: url('../img/icons/1x/dropdown_open_hover.png?1435157553'); }
+  background-image: url('../img/icons/1x/dropdown_open_hover.png?1435166101'); }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min-resolution: 120dpi), only screen and (min-resolution: 1.3dppx) {
   /* line 123, ../scss/outernet/partial/_forms.scss */
   select:hover {
-    background-image: url('../img/icons/2x/dropdown_open_hover.png?1435157553');
+    background-image: url('../img/icons/2x/dropdown_open_hover.png?1435166101');
     -moz-background-size: 25px, 25px;
     -o-background-size: 25px, 25px;
     -webkit-background-size: 25px, 25px;
@@ -1602,11 +1602,11 @@ table form button {
   text-transform: capitalize;
   background-position: center center;
   background-repeat: no-repeat;
-  background-image: url('../img/icons/1x/hamburger.png?1435157553'); }
+  background-image: url('../img/icons/1x/hamburger.png?1435166101'); }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min-resolution: 120dpi), only screen and (min-resolution: 1.3dppx) {
   /* line 136, ../scss/outernet/widgets/_menu.scss */
   .menu .hamburger a {
-    background-image: url('../img/icons/2x/hamburger.png?1435157553');
+    background-image: url('../img/icons/2x/hamburger.png?1435166101');
     -moz-background-size: 25px, 25px;
     -o-background-size: 25px, 25px;
     -webkit-background-size: 25px, 25px;
@@ -1640,11 +1640,11 @@ table form button {
 /* line 174, ../scss/outernet/widgets/_menu.scss */
 .alt-menu .level2-trigger {
   background-position: right 10px top 50%;
-  background-image: url('../img/icons/1x/arrow_right.png?1435157553'); }
+  background-image: url('../img/icons/1x/arrow_right.png?1435166101'); }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min-resolution: 120dpi), only screen and (min-resolution: 1.3dppx) {
   /* line 174, ../scss/outernet/widgets/_menu.scss */
   .alt-menu .level2-trigger {
-    background-image: url('../img/icons/2x/arrow_right.png?1435157553');
+    background-image: url('../img/icons/2x/arrow_right.png?1435166101');
     -moz-background-size: 25px, 25px;
     -o-background-size: 25px, 25px;
     -webkit-background-size: 25px, 25px;
@@ -1652,12 +1652,12 @@ table form button {
 /* line 179, ../scss/outernet/widgets/_menu.scss */
 .alt-menu .top-trigger {
   background-position: left 10px top 50%;
-  background-image: url('../img/icons/1x/arrow_left.png?1435157553');
+  background-image: url('../img/icons/1x/arrow_left.png?1435166101');
   padding-left: 40px; }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min-resolution: 120dpi), only screen and (min-resolution: 1.3dppx) {
   /* line 179, ../scss/outernet/widgets/_menu.scss */
   .alt-menu .top-trigger {
-    background-image: url('../img/icons/2x/arrow_left.png?1435157553');
+    background-image: url('../img/icons/2x/arrow_left.png?1435166101');
     -moz-background-size: 25px, 25px;
     -o-background-size: 25px, 25px;
     -webkit-background-size: 25px, 25px;
@@ -2031,13 +2031,13 @@ table form button {
   display: inline-block;
   vertical-align: middle;
   margin-right: 10px;
-  background-image: url('../img/icons/1x/checkmark_active.png?1435157553');
+  background-image: url('../img/icons/1x/checkmark_active.png?1435166101');
   width: 25px;
   height: 25px; }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min-resolution: 120dpi), only screen and (min-resolution: 1.3dppx) {
   /* line 81, ../scss/partials/_mainmenu.scss */
   .menu .dropdown.languages .dropdown-item span.selected {
-    background-image: url('../img/icons/2x/checkmark_active.png?1435157553');
+    background-image: url('../img/icons/2x/checkmark_active.png?1435166101');
     -moz-background-size: 25px, 25px;
     -o-background-size: 25px, 25px;
     -webkit-background-size: 25px, 25px;
@@ -2057,14 +2057,14 @@ table form button {
 /* line 104, ../scss/partials/_mainmenu.scss */
 .alt-menu .level2-lang .selected {
   background: #e7f3e9;
-  background-image: url('../img/icons/1x/form_positive.png?1435157553');
+  background-image: url('../img/icons/1x/form_positive.png?1435166101');
   background-repeat: no-repeat;
   background-position: right 20px top 50%;
   color: #058120; }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min-resolution: 120dpi), only screen and (min-resolution: 1.3dppx) {
   /* line 104, ../scss/partials/_mainmenu.scss */
   .alt-menu .level2-lang .selected {
-    background-image: url('../img/icons/2x/form_positive.png?1435157553');
+    background-image: url('../img/icons/2x/form_positive.png?1435166101');
     -moz-background-size: 25px, 25px;
     -o-background-size: 25px, 25px;
     -webkit-background-size: 25px, 25px;
@@ -2685,6 +2685,229 @@ footer .progver, footer .copyright {
   line-height: 137.5%; }
 
 /**
+ * _sprites.scss: sprite images with high-dpi display support
+ *
+ * Copyright 2014-2015, Outernet Inc.
+ * Some rights reserved.
+ *
+ * This software is free software licensed under the terms of GPLv3. See
+ * COPYING file that comes with the source code, or
+ * http://www.gnu.org/licenses/gpl.txt.
+ */
+/**
+ * _hdpi_images.scss: helpers for high-dpi display support
+ *
+ * Copyright 2014-2015, Outernet Inc.
+ * Some rights reserved.
+ *
+ * This software is free software licensed under the terms of GPLv3. See
+ * COPYING file that comes with the source code, or
+ * http://www.gnu.org/licenses/gpl.txt.
+ */
+/* line 4, ../scss/partials/_introduction.scss */
+.introduction {
+  background: #28639b;
+  color: #ffffff;
+  text-align: center;
+  padding: 60px 20px; }
+/* line 10, ../scss/partials/_introduction.scss */
+.introduction .logo {
+  display: inline-block;
+  vertical-align: middle;
+  background-image: url('../img/misc/1x-sa2c70d9bab.png');
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  width: 260px;
+  height: 60px;
+  text-indent: -119988px;
+  overflow: hidden;
+  text-align: left;
+  text-transform: capitalize;
+  margin-bottom: 3em; }
+@media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min-resolution: 120dpi), only screen and (min-resolution: 1.3dppx) {
+  /* line 10, ../scss/partials/_introduction.scss */
+  .introduction .logo {
+    background-image: url('../img/misc/2x-s8f76f1acdc.png');
+    background-position: 0 0;
+    -moz-background-size: 260px 203px;
+    -o-background-size: 260px 203px;
+    -webkit-background-size: 260px 203px;
+    background-size: 260px 203px; } }
+/* line 16, ../scss/partials/_introduction.scss */
+.introduction .button.cta.white {
+  color: #ffffff;
+  border-color: #ffffff; }
+/* line 20, ../scss/partials/_introduction.scss */
+.introduction .button.cta.white:hover {
+  color: #e17502;
+  background-color: #ffffff; }
+
+/**
+ * _colors.scss: color definitions
+ *
+ * Copyright 2014-2015, Outernet Inc.
+ * Some rights reserved.
+ *
+ * This software is free software licensed under the terms of GPLv3. See
+ * COPYING file that comes with the source code, or
+ * http://www.gnu.org/licenses/gpl.txt.
+ */
+/**
+ * _fonts.scss: typography definitions
+ * 
+ * Copyright 2015, Outernet Inc.
+ * Some rights reserved.
+ * 
+ * This software is free software licensed under the terms of GPLv3. See
+ * COPYING file that comes with the source code, or
+ * http://www.gnu.org/licenses/gpl.txt.
+ */
+/* line 1, ../scss/partials/_switch.scss */
+.switch {
+  max-width: 650px;
+  min-height: 60px;
+  margin: 60px auto; }
+/* line 5, ../scss/partials/_switch.scss */
+.switch .left, .switch .right {
+  border: 1px solid #dddddd;
+  padding: 10px 0;
+  width: 50%;
+  float: left;
+  background-color: #ffffff;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #3584cf; }
+/* line 36, ../scss/outernet/mixins/_hyperlinks.scss */
+.switch .left:visited, .switch .right:visited {
+  color: #28639b; }
+/* line 14, ../scss/partials/_switch.scss */
+.switch .left {
+  border-right: 0 none;
+  -moz-border-radius: 100px 0 0 100px;
+  -webkit-border-radius: 100px;
+  border-radius: 100px 0 0 100px; }
+/* line 18, ../scss/partials/_switch.scss */
+.switch .right {
+  -moz-border-radius: 0 100px 100px 0;
+  -webkit-border-radius: 0;
+  border-radius: 0 100px 100px 0; }
+/* line 21, ../scss/partials/_switch.scss */
+.switch .icon {
+  display: inline-block;
+  visibility: hidden;
+  vertical-align: middle;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url('../img/icons/1x/checkmark.png?1435166101');
+  width: 25px;
+  height: 25px; }
+@media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min-resolution: 120dpi), only screen and (min-resolution: 1.3dppx) {
+  /* line 21, ../scss/partials/_switch.scss */
+  .switch .icon {
+    background-image: url('../img/icons/2x/checkmark.png?1435166101');
+    -moz-background-size: 25px, 25px;
+    -o-background-size: 25px, 25px;
+    -webkit-background-size: 25px, 25px;
+    background-size: 25px, 25px; } }
+/* line 29, ../scss/partials/_switch.scss */
+.switch .active {
+  background-color: #eeeeee;
+  color: #058120; }
+/* line 36, ../scss/outernet/mixins/_hyperlinks.scss */
+.switch .active:visited {
+  color: #058120; }
+/* line 32, ../scss/partials/_switch.scss */
+.switch .active .icon {
+  visibility: visible; }
+
+/* line 6, ../scss/partials/_products.scss */
+.products hr {
+  border: 0 none;
+  border-top: 1px solid #dddddd; }
+/* line 11, ../scss/partials/_products.scss */
+.products .narrower {
+  padding-left: 20%;
+  padding-right: 20%; }
+/* line 17, ../scss/partials/_products.scss */
+.products .title .main {
+  font-size: 250%; }
+/* line 20, ../scss/partials/_products.scss */
+.products .title .sub {
+  color: #888888;
+  margin-top: 0; }
+/* line 26, ../scss/partials/_products.scss */
+.products .pic-col {
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 100%;
+  min-height: 400px; }
+/* line 34, ../scss/partials/_products.scss */
+.products .pic-col.lantern1 {
+  background-image: url('../img/librarian/lantern1.jpg?1435226522');
+  width: 50%; }
+/* line 39, ../scss/partials/_products.scss */
+.products .pic-col.lantern2 {
+  background-image: url('../img/librarian/lantern2.jpg?1435226577');
+  width: 50%; }
+/* line 44, ../scss/partials/_products.scss */
+.products .pic-col.pillar {
+  background-image: url('../img/librarian/lantern3.jpg?1435226591'); }
+/* line 48, ../scss/partials/_products.scss */
+.products .pic-col.diy {
+  background-image: url('../img/librarian/lantern2.jpg?1435226577'); }
+/* line 52, ../scss/partials/_products.scss */
+.products .pic-col.usb-stb {
+  background-image: url('../img/librarian/lantern1.jpg?1435226522'); }
+/* line 56, ../scss/partials/_products.scss */
+.products .h-bar {
+  border: 0 none;
+  padding-bottom: 40px; }
+/* line 59, ../scss/partials/_products.scss */
+.products .h-bar.white {
+  background: #ffffff; }
+/* line 64, ../scss/partials/_products.scss */
+.products .overview label {
+  font-weight: normal;
+  display: inline-block; }
+/* line 69, ../scss/partials/_products.scss */
+.products .items {
+  text-align: left; }
+/* line 71, ../scss/partials/_products.scss */
+.products .items .buy {
+  float: right; }
+/* line 76, ../scss/partials/_products.scss */
+.products .optional {
+  color: #e17502; }
+/* line 80, ../scss/partials/_products.scss */
+.products .more-info {
+  margin-top: 40px; }
+/* line 84, ../scss/partials/_products.scss */
+.products .complete {
+  padding-top: 40px; }
+/* line 86, ../scss/partials/_products.scss */
+.products .complete .icon {
+  display: inline-block;
+  display: inline-block;
+  vertical-align: middle;
+  background-image: url('../img/icons/1x-sbbd3805629.png');
+  background-position: 0 -1375px;
+  background-repeat: no-repeat;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 1em; }
+@media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min-resolution: 120dpi), only screen and (min-resolution: 1.3dppx) {
+  /* line 86, ../scss/partials/_products.scss */
+  .products .complete .icon {
+    background-image: url('../img/icons/2x-s92573f0ff7.png');
+    background-position: 0 -1375px;
+    -moz-background-size: 100px 4004px;
+    -o-background-size: 100px 4004px;
+    -webkit-background-size: 100px 4004px;
+    background-size: 100px 4004px; } }
+
+/**
  * _forms.scss: form control definitions
  * 
  * Copyright 2015, Outernet Inc.
@@ -3179,26 +3402,26 @@ form.search .icon {
 .load-more button .icon {
   display: inline-block;
   vertical-align: middle;
-  background-image: url('../img/animated/1x/loader.gif?1435157553');
+  background-image: url('../img/animated/1x/loader.gif?1435166101');
   width: 21px;
   height: 5px; }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min-resolution: 120dpi), only screen and (min-resolution: 1.3dppx) {
   /* line 165, ../scss/partials/_content_list.scss */
   .load-more button .icon {
-    background-image: url('../img/animated/2x/loader.gif?1435157553');
+    background-image: url('../img/animated/2x/loader.gif?1435166101');
     -moz-background-size: 21px, 5px;
     -o-background-size: 21px, 5px;
     -webkit-background-size: 21px, 5px;
     background-size: 21px, 5px; } }
 /* line 171, ../scss/partials/_content_list.scss */
 .load-more button.active .icon {
-  background-image: url('../img/animated/1x/loader_active.gif?1435157553');
+  background-image: url('../img/animated/1x/loader_active.gif?1435166101');
   width: 21px;
   height: 5px; }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min-resolution: 120dpi), only screen and (min-resolution: 1.3dppx) {
   /* line 171, ../scss/partials/_content_list.scss */
   .load-more button.active .icon {
-    background-image: url('../img/animated/2x/loader_active.gif?1435157553');
+    background-image: url('../img/animated/2x/loader_active.gif?1435166101');
     -moz-background-size: 21px, 5px;
     -o-background-size: 21px, 5px;
     -webkit-background-size: 21px, 5px;
