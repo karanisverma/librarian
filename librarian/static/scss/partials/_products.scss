@@ -107,9 +107,9 @@ $web-2x: sprite-map('web_icons/2x/*.png', $spacing: 60px);
       .icon {
         display: inline-block;
         vertical-align: middle;
-        @include with-hdpi('icons', 'cart', yes);
+        @include with-hdpi('icons', 'cart_link', yes);
         &:hover {
-          @include with-hdpi('icons', 'cart_hover', yes);
+          @include with-hdpi('icons', 'cart_link_hover', yes);
         }
       }
     }
