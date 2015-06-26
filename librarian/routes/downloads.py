@@ -9,7 +9,7 @@ file that comes with the source code, or http://www.gnu.org/licenses/gpl.txt.
 """
 
 from bottle import request
-from bottle_utils.i18n import lazy_gettext as _, i18n_url
+from bottle_utils.i18n import lazy_ngettext, lazy_gettext as _, i18n_url
 
 from ..core import downloads
 from ..lib.paginator import Paginator
@@ -45,21 +45,35 @@ def list_downloads():
                 metadata=paginator.items)
 
 
+def notify_content_added(content_id_list):
+    archive = open_archive()
+    content_list = archive.get_multiple(content_id_list,
+                                        fields=('md5', 'title'))
+    for content_item in content_list:
+        content_data = {'id': content_item['md5'],
+                        'title': content_item['title']}
+        request.app.exts.notifications.send(content_data, category='content')
+
+
 @invalidates(prefix=['content', 'downloads'], after=True)
 def add(file_list):
     archive = open_archive()
     added_count = archive.add_to_archive(file_list)
-    request.app.exts.notifications.send(_('Content added.'),
-                                        category='content')
+    notify_content_added(file_list)
     # Translators, used as confirmation title after the chosen updates were
     # successfully added to the library
     title = _("Updates added")
     # Translators, used as confirmation message after the chosen updates were
     # successfully added to the library
-    message = _("{update_count} update(s) have been added to the Library.")
-    message = message.format(update_count=added_count)
-    url = i18n_url('content:list')
-    return (title, message, url)
+    message = lazy_ngettext(
+        "An update has been added to the Library.",
+        "{update_count} updates have been added to the Library.",
+        added_count
+    ).format(update_count=added_count)
+    return dict(page_title=title,
+                message=message,
+                redirect_url=i18n_url('downloads:list'),
+                redirect_target=_("Updates"))
 
 
 @invalidates(prefix=['content', 'downloads'], after=True)
@@ -67,17 +81,21 @@ def add_all(*args):
     all_files = [meta['md5'] for meta in filter_downloads(lang=None)]
     archive = open_archive()
     added_count = archive.add_to_archive(all_files)
-    request.app.exts.notifications.send(_('Content added.'),
-                                        category='content')
+    notify_content_added(all_files)
     # Translators, used as confirmation title after the chosen updates were
     # successfully added to the library
     title = _("Updates added")
     # Translators, used as confirmation message after the chosen updates were
     # successfully added to the library
-    message = _("{update_count} update(s) have been added to the Library.")
-    message = message.format(update_count=added_count)
-    url = i18n_url('content:list')
-    return (title, message, url)
+    message = lazy_ngettext(
+        "An update has been added to the Library.",
+        "{update_count} updates have been added to the Library.",
+        added_count
+    ).format(update_count=added_count)
+    return dict(page_title=title,
+                message=message,
+                redirect_url=i18n_url('downloads:list'),
+                redirect_target=_("Updates"))
 
 
 @invalidates(prefix=['downloads'], after=True)
@@ -89,12 +107,13 @@ def delete(file_list):
     title = _("Updates deleted")
     # Translators, used as confirmation message after the chosen updates were
     # deleted on the updates page
-    message = _("{update_count} update(s) have been deleted.")
-    message = message.format(update_count=removed_count)
-    # if no updates remained, redirect to content page
-    updates = filter_downloads(lang=None)
-    url = i18n_url('downloads:list') if updates else i18n_url('content:list')
-    return (title, message, url)
+    message = lazy_ngettext("An update has been deleted.",
+                            "{update_count} updates have been deleted.",
+                            removed_count).format(update_count=removed_count)
+    return dict(page_title=title,
+                message=message,
+                redirect_url=i18n_url('downloads:list'),
+                redirect_target=_("Updates"))
 
 
 @invalidates(prefix=['downloads'], after=True)
@@ -107,10 +126,13 @@ def delete_all(*args):
     title = _("Updates deleted")
     # Translators, used as confirmation message after the chosen updates were
     # deleted on the updates page
-    message = _("{update_count} update(s) have been deleted.")
-    message = message.format(update_count=removed_count)
-    url = i18n_url('content:list')
-    return (title, message, url)
+    message = lazy_ngettext("An update has been deleted.",
+                            "{update_count} updates have been deleted.",
+                            removed_count).format(update_count=removed_count)
+    return dict(page_title=title,
+                message=message,
+                redirect_url=i18n_url('downloads:list'),
+                redirect_target=_("Updates"))
 
 
 @view('feedback')
@@ -131,17 +153,16 @@ def manage_downloads():
         # Translators, used as error message shown to user when wrong action
         # code is submitted to server
         message = _('Invalid action, please use one of the form buttons.')
-        url = i18n_url('downloads:list')
         status = 'error'
+        feedback = dict(page_title=title,
+                        message=message,
+                        redirect_url=i18n_url('downloads:list'),
+                        redirect_target=_("Updates"))
     else:
-        (title, message, url) = handler(file_list)
         status = 'success'
+        feedback = handler(file_list)
 
-    return dict(status=status,
-                page_title=title,
-                main_message=title,
-                sub_message=message,
-                redirect=url)
+    return dict(status=status, **feedback)
 
 
 def routes(app):
