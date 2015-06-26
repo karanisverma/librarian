@@ -152,12 +152,21 @@ select option {
   border: 1px solid $fire25;
   padding: 15px;
   margin-bottom: 1em;
+  @include help-text;
 
   li {
-    @include help-text;
     @include form-help-text-layout;
     color: $fire;
     @include bold;
     padding-left: 0.2em;
   }
+}
+
+.form-success {
+  background: $forest6;
+  color: $forest;
+  border: 1px solid $forest25;
+  padding: 15px;
+  margin-bottom: 1em;
+  @include help-text;
 }
