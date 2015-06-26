@@ -8,6 +8,7 @@
 
         refreshInterval = 3000,  // ms
         fileRefreshInterval = 30000,  // ms
+        notifyTimeout = 5000,  // ms
         satSelection = $(window.templates.satPresets),
         satSelector = satSelection.find('select'),
         settingsForm,
@@ -83,6 +84,12 @@
         }
     };
 
+    self.dismissSuccess = function () {
+        setTimeout(function () {
+            $('.ondd-success').remove();
+        }, notifyTimeout);
+    };
+
     self.submitForm = function (event) {
         event.preventDefault();
         $.post(settingsForm.attr('action'), settingsForm.serialize(), function (result) {
@@ -92,6 +99,7 @@
             settingsForm.replaceWith(result);
             self.initForm();
             fields.css('display', oldDisplay);
+            self.dismissSuccess();
         });
     };
 
