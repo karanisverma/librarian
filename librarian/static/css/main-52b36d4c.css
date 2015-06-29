@@ -2689,6 +2689,16 @@ footer .progver, footer .copyright {
   line-height: 137.5%; }
 
 /**
+ * _fonts.scss: typography definitions
+ * 
+ * Copyright 2015, Outernet Inc.
+ * Some rights reserved.
+ * 
+ * This software is free software licensed under the terms of GPLv3. See
+ * COPYING file that comes with the source code, or
+ * http://www.gnu.org/licenses/gpl.txt.
+ */
+/**
  * _sprites.scss: sprite images with high-dpi display support
  *
  * Copyright 2014-2015, Outernet Inc.
@@ -2708,43 +2718,197 @@ footer .progver, footer .copyright {
  * COPYING file that comes with the source code, or
  * http://www.gnu.org/licenses/gpl.txt.
  */
-/* line 4, ../scss/partials/_introduction.scss */
+/* line 5, ../scss/partials/_introduction.scss */
 .introduction {
-  background: #28639b;
+  background-image: url('../img/web_misc/intro_bg.jpg?1435581895');
+  background-size: cover;
+  background-repeat: no-repeat;
   color: #ffffff;
   text-align: center;
-  padding: 60px 20px; }
-/* line 10, ../scss/partials/_introduction.scss */
-.introduction .logo {
+  padding: 50px 200px;
+  position: relative; }
+/* line 14, ../scss/partials/_introduction.scss */
+.introduction .left-sat {
   display: inline-block;
   vertical-align: middle;
-  background-image: url('../img/misc/1x-sa2c70d9bab.png');
+  background-image: url('../img/web_icons/1x-s547a1e6f71.png');
+  background-position: 0 -1285px;
+  background-repeat: no-repeat;
+  width: 220px;
+  height: 175px;
+  position: absolute;
+  left: 0;
+  top: 10%; }
+@media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min-resolution: 120dpi), only screen and (min-resolution: 1.3dppx) {
+  /* line 14, ../scss/partials/_introduction.scss */
+  .introduction .left-sat {
+    background-image: url('../img/web_icons/2x-s12075f1618.png');
+    background-position: 0 -1285px;
+    -moz-background-size: 220px 1911px;
+    -o-background-size: 220px 1911px;
+    -webkit-background-size: 220px 1911px;
+    background-size: 220px 1911px; } }
+/* line 20, ../scss/partials/_introduction.scss */
+.introduction .right-sat {
+  display: inline-block;
+  vertical-align: middle;
+  background-image: url('../img/web_icons/1x-s547a1e6f71.png');
+  background-position: 0 -1490px;
+  background-repeat: no-repeat;
+  width: 157px;
+  height: 131px;
+  position: absolute;
+  right: 0;
+  top: 30%; }
+@media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min-resolution: 120dpi), only screen and (min-resolution: 1.3dppx) {
+  /* line 20, ../scss/partials/_introduction.scss */
+  .introduction .right-sat {
+    background-image: url('../img/web_icons/2x-s12075f1618.png');
+    background-position: 0 -1490px;
+    -moz-background-size: 220px 1911px;
+    -o-background-size: 220px 1911px;
+    -webkit-background-size: 220px 1911px;
+    background-size: 220px 1911px; } }
+/* line 26, ../scss/partials/_introduction.scss */
+.introduction .slider-container {
+  display: none; }
+/* line 29, ../scss/partials/_introduction.scss */
+.introduction .slider-container .buttons .icon {
+  margin: 0 20px;
+  opacity: 0.5;
+  -moz-transition: opacity 0.5s;
+  -o-transition: opacity 0.5s;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+  cursor: pointer; }
+/* line 34, ../scss/partials/_introduction.scss */
+.introduction .slider-container .buttons .icon.active, .introduction .slider-container .buttons .icon:hover {
+  opacity: 1; }
+/* line 37, ../scss/partials/_introduction.scss */
+.introduction .slider-container .buttons .icon[data-slide-name="freeinformation"] {
+  display: inline-block;
+  vertical-align: middle;
+  background-image: url('../img/web_icons/1x-s547a1e6f71.png');
+  background-position: 0 -830px;
+  background-repeat: no-repeat;
+  width: 60px;
+  height: 60px; }
+@media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min-resolution: 120dpi), only screen and (min-resolution: 1.3dppx) {
+  /* line 37, ../scss/partials/_introduction.scss */
+  .introduction .slider-container .buttons .icon[data-slide-name="freeinformation"] {
+    background-image: url('../img/web_icons/2x-s12075f1618.png');
+    background-position: 0 -830px;
+    -moz-background-size: 220px 1911px;
+    -o-background-size: 220px 1911px;
+    -webkit-background-size: 220px 1911px;
+    background-size: 220px 1911px; } }
+/* line 40, ../scss/partials/_introduction.scss */
+.introduction .slider-container .buttons .icon[data-slide-name="courseware"] {
+  display: inline-block;
+  vertical-align: middle;
+  background-image: url('../img/web_icons/1x-s547a1e6f71.png');
+  background-position: 0 -180px;
+  background-repeat: no-repeat;
+  width: 60px;
+  height: 60px; }
+@media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min-resolution: 120dpi), only screen and (min-resolution: 1.3dppx) {
+  /* line 40, ../scss/partials/_introduction.scss */
+  .introduction .slider-container .buttons .icon[data-slide-name="courseware"] {
+    background-image: url('../img/web_icons/2x-s12075f1618.png');
+    background-position: 0 -180px;
+    -moz-background-size: 220px 1911px;
+    -o-background-size: 220px 1911px;
+    -webkit-background-size: 220px 1911px;
+    background-size: 220px 1911px; } }
+/* line 43, ../scss/partials/_introduction.scss */
+.introduction .slider-container .buttons .icon[data-slide-name="entertainment"] {
+  display: inline-block;
+  vertical-align: middle;
+  background-image: url('../img/web_icons/1x-s547a1e6f71.png');
+  background-position: 0 -540px;
+  background-repeat: no-repeat;
+  width: 60px;
+  height: 60px; }
+@media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min-resolution: 120dpi), only screen and (min-resolution: 1.3dppx) {
+  /* line 43, ../scss/partials/_introduction.scss */
+  .introduction .slider-container .buttons .icon[data-slide-name="entertainment"] {
+    background-image: url('../img/web_icons/2x-s12075f1618.png');
+    background-position: 0 -540px;
+    -moz-background-size: 220px 1911px;
+    -o-background-size: 220px 1911px;
+    -webkit-background-size: 220px 1911px;
+    background-size: 220px 1911px; } }
+/* line 46, ../scss/partials/_introduction.scss */
+.introduction .slider-container .buttons .icon[data-slide-name="apps"] {
+  display: inline-block;
+  vertical-align: middle;
+  background-image: url('../img/web_icons/1x-s547a1e6f71.png');
   background-position: 0 0;
   background-repeat: no-repeat;
-  width: 260px;
-  height: 60px;
-  text-indent: -119988px;
-  overflow: hidden;
-  text-align: left;
-  text-transform: capitalize;
-  margin-bottom: 3em; }
+  width: 60px;
+  height: 60px; }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min-resolution: 120dpi), only screen and (min-resolution: 1.3dppx) {
-  /* line 10, ../scss/partials/_introduction.scss */
-  .introduction .logo {
-    background-image: url('../img/misc/2x-s8f76f1acdc.png');
+  /* line 46, ../scss/partials/_introduction.scss */
+  .introduction .slider-container .buttons .icon[data-slide-name="apps"] {
+    background-image: url('../img/web_icons/2x-s12075f1618.png');
     background-position: 0 0;
-    -moz-background-size: 260px 203px;
-    -o-background-size: 260px 203px;
-    -webkit-background-size: 260px 203px;
-    background-size: 260px 203px; } }
-/* line 16, ../scss/partials/_introduction.scss */
-.introduction .button.cta.white {
-  color: #ffffff;
-  border-color: #ffffff; }
-/* line 20, ../scss/partials/_introduction.scss */
-.introduction .button.cta.white:hover {
-  color: #e17502;
-  background-color: #ffffff; }
+    -moz-background-size: 220px 1911px;
+    -o-background-size: 220px 1911px;
+    -webkit-background-size: 220px 1911px;
+    background-size: 220px 1911px; } }
+/* line 49, ../scss/partials/_introduction.scss */
+.introduction .slider-container .buttons .icon[data-slide-name="emergencies"] {
+  display: inline-block;
+  vertical-align: middle;
+  background-image: url('../img/web_icons/1x-s547a1e6f71.png');
+  background-position: 0 -360px;
+  background-repeat: no-repeat;
+  width: 60px;
+  height: 60px; }
+@media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min-resolution: 120dpi), only screen and (min-resolution: 1.3dppx) {
+  /* line 49, ../scss/partials/_introduction.scss */
+  .introduction .slider-container .buttons .icon[data-slide-name="emergencies"] {
+    background-image: url('../img/web_icons/2x-s12075f1618.png');
+    background-position: 0 -360px;
+    -moz-background-size: 220px 1911px;
+    -o-background-size: 220px 1911px;
+    -webkit-background-size: 220px 1911px;
+    background-size: 220px 1911px; } }
+/* line 52, ../scss/partials/_introduction.scss */
+.introduction .slider-container .buttons .icon[data-slide-name="usercontent"] {
+  display: inline-block;
+  vertical-align: middle;
+  background-image: url('../img/web_icons/1x-s547a1e6f71.png');
+  background-position: 0 -1761px;
+  background-repeat: no-repeat;
+  width: 60px;
+  height: 60px; }
+@media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min-resolution: 120dpi), only screen and (min-resolution: 1.3dppx) {
+  /* line 52, ../scss/partials/_introduction.scss */
+  .introduction .slider-container .buttons .icon[data-slide-name="usercontent"] {
+    background-image: url('../img/web_icons/2x-s12075f1618.png');
+    background-position: 0 -1761px;
+    -moz-background-size: 220px 1911px;
+    -o-background-size: 220px 1911px;
+    -webkit-background-size: 220px 1911px;
+    background-size: 220px 1911px; } }
+/* line 57, ../scss/partials/_introduction.scss */
+.introduction .slider-container .slide {
+  -moz-transition: opacity 1s;
+  -o-transition: opacity 1s;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  font-weight: bold; }
+/* line 63, ../scss/partials/_introduction.scss */
+.introduction .slider-container .slide .message {
+  margin: 1em 0 2em 0; }
+/* line 67, ../scss/partials/_introduction.scss */
+.introduction .slider-container .slide.visible {
+  opacity: 1;
+  height: auto; }
 
 /**
  * _colors.scss: color definitions
@@ -2762,6 +2926,26 @@ footer .progver, footer .copyright {
  * Copyright 2015, Outernet Inc.
  * Some rights reserved.
  * 
+ * This software is free software licensed under the terms of GPLv3. See
+ * COPYING file that comes with the source code, or
+ * http://www.gnu.org/licenses/gpl.txt.
+ */
+/**
+ * _sprites.scss: sprite images with high-dpi display support
+ *
+ * Copyright 2014-2015, Outernet Inc.
+ * Some rights reserved.
+ *
+ * This software is free software licensed under the terms of GPLv3. See
+ * COPYING file that comes with the source code, or
+ * http://www.gnu.org/licenses/gpl.txt.
+ */
+/**
+ * _hdpi_images.scss: helpers for high-dpi display support
+ *
+ * Copyright 2014-2015, Outernet Inc.
+ * Some rights reserved.
+ *
  * This software is free software licensed under the terms of GPLv3. See
  * COPYING file that comes with the source code, or
  * http://www.gnu.org/licenses/gpl.txt.
@@ -2825,51 +3009,51 @@ footer .progver, footer .copyright {
 .switch .active .icon {
   visibility: visible; }
 
-/* line 12, ../scss/partials/_products.scss */
+/* line 7, ../scss/partials/_products.scss */
 .products hr {
   border: 0 none;
   border-top: 1px solid #dddddd; }
-/* line 17, ../scss/partials/_products.scss */
+/* line 12, ../scss/partials/_products.scss */
 .products .narrower {
   padding-left: 20%;
   padding-right: 20%; }
-/* line 23, ../scss/partials/_products.scss */
+/* line 18, ../scss/partials/_products.scss */
 .products .title .main {
   font-size: 250%; }
-/* line 26, ../scss/partials/_products.scss */
+/* line 21, ../scss/partials/_products.scss */
 .products .title .sub {
   color: #888888;
   margin-top: 0; }
-/* line 32, ../scss/partials/_products.scss */
+/* line 27, ../scss/partials/_products.scss */
 .products .pic-col {
   background-size: cover;
   background-repeat: no-repeat;
   display: inline-block;
   width: 100%;
   min-height: 400px; }
-/* line 40, ../scss/partials/_products.scss */
+/* line 35, ../scss/partials/_products.scss */
 .products .pic-col.lantern {
   background-image: url('../img/web_misc/howto_lantern.jpg?1435580442'); }
-/* line 44, ../scss/partials/_products.scss */
+/* line 39, ../scss/partials/_products.scss */
 .products .pic-col.pillar {
   background-image: url('../img/web_misc/howto_pillar.jpg?1435580442'); }
-/* line 48, ../scss/partials/_products.scss */
+/* line 43, ../scss/partials/_products.scss */
 .products .pic-col.diy {
   background-image: url('../img/web_misc/howto_diy.jpg?1435580442'); }
-/* line 52, ../scss/partials/_products.scss */
+/* line 47, ../scss/partials/_products.scss */
 .products .pic-col.usb-stb {
   background-image: url('../img/web_misc/howto_usb.jpg?1435580442'); }
-/* line 56, ../scss/partials/_products.scss */
+/* line 51, ../scss/partials/_products.scss */
 .products .h-bar {
   border: 0 none;
   padding-bottom: 40px; }
-/* line 59, ../scss/partials/_products.scss */
+/* line 54, ../scss/partials/_products.scss */
 .products .h-bar.white {
   background: #ffffff; }
-/* line 65, ../scss/partials/_products.scss */
+/* line 60, ../scss/partials/_products.scss */
 .products .button .buy {
   position: relative; }
-/* line 67, ../scss/partials/_products.scss */
+/* line 62, ../scss/partials/_products.scss */
 .products .button .buy .icon {
   position: absolute;
   top: -2px;
@@ -2877,102 +3061,102 @@ footer .progver, footer .copyright {
   width: 25px;
   height: 25px; }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min-resolution: 120dpi), only screen and (min-resolution: 1.3dppx) {
-  /* line 67, ../scss/partials/_products.scss */
+  /* line 62, ../scss/partials/_products.scss */
   .products .button .buy .icon {
     background-image: url('../img/icons/2x/cart_rev.png?1435580442');
     -moz-background-size: 25px, 25px;
     -o-background-size: 25px, 25px;
     -webkit-background-size: 25px, 25px;
     background-size: 25px, 25px; } }
-/* line 71, ../scss/partials/_products.scss */
+/* line 66, ../scss/partials/_products.scss */
 .products .button .buy .icon:hover {
   background-image: url('../img/icons/1x/cart_rev_hover.png?1435580442');
   width: 25px;
   height: 25px; }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min-resolution: 120dpi), only screen and (min-resolution: 1.3dppx) {
-  /* line 71, ../scss/partials/_products.scss */
+  /* line 66, ../scss/partials/_products.scss */
   .products .button .buy .icon:hover {
     background-image: url('../img/icons/2x/cart_rev_hover.png?1435580442');
     -moz-background-size: 25px, 25px;
     -o-background-size: 25px, 25px;
     -webkit-background-size: 25px, 25px;
     background-size: 25px, 25px; } }
-/* line 75, ../scss/partials/_products.scss */
+/* line 70, ../scss/partials/_products.scss */
 .products .button .buy .label {
   margin-left: 35px; }
-/* line 81, ../scss/partials/_products.scss */
+/* line 76, ../scss/partials/_products.scss */
 .products .overview {
   margin: 30px 0; }
-/* line 83, ../scss/partials/_products.scss */
+/* line 78, ../scss/partials/_products.scss */
 .products .overview label {
   font-weight: normal;
   display: inline-block;
   margin: 0 20px;
   cursor: auto; }
-/* line 88, ../scss/partials/_products.scss */
+/* line 83, ../scss/partials/_products.scss */
 .products .overview label .icon {
   margin-right: 10px; }
-/* line 91, ../scss/partials/_products.scss */
+/* line 86, ../scss/partials/_products.scss */
 .products .overview label.quantity .icon {
   display: inline-block;
   vertical-align: middle;
-  background-image: url('../img/web_icons/1x-sa3e78965b5.png');
-  background-position: 0 -275px;
+  background-image: url('../img/web_icons/1x-s547a1e6f71.png');
+  background-position: 0 -1175px;
   background-repeat: no-repeat;
   width: 25px;
   height: 25px; }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min-resolution: 120dpi), only screen and (min-resolution: 1.3dppx) {
-  /* line 91, ../scss/partials/_products.scss */
+  /* line 86, ../scss/partials/_products.scss */
   .products .overview label.quantity .icon {
-    background-image: url('../img/web_icons/2x-s0f323ba286.png');
-    background-position: 0 -275px;
-    -moz-background-size: 25px 465px;
-    -o-background-size: 25px 465px;
-    -webkit-background-size: 25px 465px;
-    background-size: 25px 465px; } }
-/* line 94, ../scss/partials/_products.scss */
+    background-image: url('../img/web_icons/2x-s12075f1618.png');
+    background-position: 0 -1175px;
+    -moz-background-size: 220px 1911px;
+    -o-background-size: 220px 1911px;
+    -webkit-background-size: 220px 1911px;
+    background-size: 220px 1911px; } }
+/* line 89, ../scss/partials/_products.scss */
 .products .overview label.price .icon {
   display: inline-block;
   vertical-align: middle;
-  background-image: url('../img/web_icons/1x-sa3e78965b5.png');
-  background-position: 0 -220px;
+  background-image: url('../img/web_icons/1x-s547a1e6f71.png');
+  background-position: 0 -1120px;
   background-repeat: no-repeat;
   width: 25px;
   height: 25px; }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min-resolution: 120dpi), only screen and (min-resolution: 1.3dppx) {
-  /* line 94, ../scss/partials/_products.scss */
+  /* line 89, ../scss/partials/_products.scss */
   .products .overview label.price .icon {
-    background-image: url('../img/web_icons/2x-s0f323ba286.png');
-    background-position: 0 -220px;
-    -moz-background-size: 25px 465px;
-    -o-background-size: 25px 465px;
-    -webkit-background-size: 25px 465px;
-    background-size: 25px 465px; } }
-/* line 97, ../scss/partials/_products.scss */
+    background-image: url('../img/web_icons/2x-s12075f1618.png');
+    background-position: 0 -1120px;
+    -moz-background-size: 220px 1911px;
+    -o-background-size: 220px 1911px;
+    -webkit-background-size: 220px 1911px;
+    background-size: 220px 1911px; } }
+/* line 92, ../scss/partials/_products.scss */
 .products .overview label.time .icon {
   display: inline-block;
   vertical-align: middle;
-  background-image: url('../img/web_icons/1x-sa3e78965b5.png');
-  background-position: 0 -330px;
+  background-image: url('../img/web_icons/1x-s547a1e6f71.png');
+  background-position: 0 -1230px;
   background-repeat: no-repeat;
   width: 25px;
   height: 25px; }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min-resolution: 120dpi), only screen and (min-resolution: 1.3dppx) {
-  /* line 97, ../scss/partials/_products.scss */
+  /* line 92, ../scss/partials/_products.scss */
   .products .overview label.time .icon {
-    background-image: url('../img/web_icons/2x-s0f323ba286.png');
-    background-position: 0 -330px;
-    -moz-background-size: 25px 465px;
-    -o-background-size: 25px 465px;
-    -webkit-background-size: 25px 465px;
-    background-size: 25px 465px; } }
-/* line 103, ../scss/partials/_products.scss */
+    background-image: url('../img/web_icons/2x-s12075f1618.png');
+    background-position: 0 -1230px;
+    -moz-background-size: 220px 1911px;
+    -o-background-size: 220px 1911px;
+    -webkit-background-size: 220px 1911px;
+    background-size: 220px 1911px; } }
+/* line 98, ../scss/partials/_products.scss */
 .products .items {
   text-align: left; }
-/* line 105, ../scss/partials/_products.scss */
+/* line 100, ../scss/partials/_products.scss */
 .products .items .buy {
   float: right; }
-/* line 107, ../scss/partials/_products.scss */
+/* line 102, ../scss/partials/_products.scss */
 .products .items .buy .icon {
   display: inline-block;
   vertical-align: middle;
@@ -2980,36 +3164,36 @@ footer .progver, footer .copyright {
   width: 25px;
   height: 25px; }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min-resolution: 120dpi), only screen and (min-resolution: 1.3dppx) {
-  /* line 107, ../scss/partials/_products.scss */
+  /* line 102, ../scss/partials/_products.scss */
   .products .items .buy .icon {
     background-image: url('../img/icons/2x/cart_link.png?1435580442');
     -moz-background-size: 25px, 25px;
     -o-background-size: 25px, 25px;
     -webkit-background-size: 25px, 25px;
     background-size: 25px, 25px; } }
-/* line 111, ../scss/partials/_products.scss */
+/* line 106, ../scss/partials/_products.scss */
 .products .items .buy .icon:hover {
   background-image: url('../img/icons/1x/cart_link_hover.png?1435580442');
   width: 25px;
   height: 25px; }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min-resolution: 120dpi), only screen and (min-resolution: 1.3dppx) {
-  /* line 111, ../scss/partials/_products.scss */
+  /* line 106, ../scss/partials/_products.scss */
   .products .items .buy .icon:hover {
     background-image: url('../img/icons/2x/cart_link_hover.png?1435580442');
     -moz-background-size: 25px, 25px;
     -o-background-size: 25px, 25px;
     -webkit-background-size: 25px, 25px;
     background-size: 25px, 25px; } }
-/* line 118, ../scss/partials/_products.scss */
+/* line 113, ../scss/partials/_products.scss */
 .products .optional {
   color: #e17502; }
-/* line 122, ../scss/partials/_products.scss */
+/* line 117, ../scss/partials/_products.scss */
 .products .more-info {
   margin-top: 40px; }
-/* line 126, ../scss/partials/_products.scss */
+/* line 121, ../scss/partials/_products.scss */
 .products .complete {
   padding-top: 40px; }
-/* line 128, ../scss/partials/_products.scss */
+/* line 123, ../scss/partials/_products.scss */
 .products .complete .icon {
   display: inline-block;
   display: inline-block;
@@ -3021,7 +3205,7 @@ footer .progver, footer .copyright {
   height: 100px;
   margin-bottom: 1em; }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min-resolution: 120dpi), only screen and (min-resolution: 1.3dppx) {
-  /* line 128, ../scss/partials/_products.scss */
+  /* line 123, ../scss/partials/_products.scss */
   .products .complete .icon {
     background-image: url('../img/icons/2x-s0fc7e81043.png');
     background-position: 0 -1835px;
