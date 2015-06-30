@@ -1,0 +1,69 @@
+@import "outernet/mixins/colors";
+@import "outernet/mixins/hyperlinks";
+
+.tabbed-menu {
+  .left, .right {
+    display: inline-block;
+    width: 50%;
+    position: relative;
+  }
+  .right {
+    text-align: right;
+  }
+  .social {
+    &:hover {
+      border-bottom: 0 none;
+    }
+    &.facebook {
+      @include web-icon(fb, yes);
+      &:hover {
+        @include web-icon(fb_hover, yes);
+      }
+    }
+    &.twitter {
+      @include web-icon(tw, yes);
+      &:hover {
+        @include web-icon(tw_hover, yes);
+      }
+    }
+    &.google {
+      @include web-icon(go, yes);
+      &:hover {
+        @include web-icon(go_hover, yes);
+      }
+    }
+  }
+  .lantern {
+    background-image: image-url('web_misc/temp_cta.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 0;
+    width: 83px;
+    height: 76px;
+    z-index: 1000;
+  }
+  .buy-a-lantern {
+    @include link-cta;
+    margin-left: 6em;
+    &:hover {
+      border-bottom: 3px solid transparent;
+    }
+    .icon {
+      margin-right: 10px;
+      @include icon(cta, yes);
+      &:hover {
+        @include icon(cta_hover, yes);
+      }
+    }
+  }
+  .sublink {
+    color: $universe;
+    &.store .icon {
+      margin-right: 10px;
+      @include icon(cart, yes);
+      &:hover {
+        @include icon(cart_hover, yes);
+      }
+    }
+  }
+}
