@@ -1,11 +1,10 @@
 {
     "css/content-%(version)s.css": "76c83d02", 
     "css/dashboard-%(version)s.css": "dc20454c", 
-    "css/main-%(version)s.css": "f7e7d559", 
-    "css/wizard-%(version)s.css": "b7881531", 
+    "css/main-%(version)s.css": "5a1081fe", 
+    "css/wizard-%(version)s.css": "de42fcb9", 
     "js/content-%(version)s.js": "24e88494", 
     "js/dashboard-%(version)s.js": "485a2466", 
-    "js/reader-%(version)s.js": "0c025853", 
     "js/setup-%(version)s.js": "39b16b3d", 
     "js/ui-%(version)s.js": "75b7b478"
 }
