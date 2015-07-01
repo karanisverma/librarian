@@ -2,7 +2,8 @@
 (function ($) {
     'use strict';
     var delay = 3000,  // slide change delay in milliseconds
-        slider = $('.slider-container');
+        intro = $('.introduction'),
+        slider = $(window.templates.slider);
 
     function deactivateAll() {
         $('.buttons .icon').removeClass('active');
@@ -34,6 +35,6 @@
         setTimeout(startSlide, delay);
     }
 
-    slider.show();
+    intro.append(slider);
     startSlide();
 }(this.jQuery));

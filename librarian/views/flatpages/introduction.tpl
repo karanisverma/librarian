@@ -3,6 +3,9 @@
     <div class="right-sat"></div>
     <h1>${_("Worldwide broadcast from space, for free!")}</h1>
     <p>${_("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.")}</p>
+</div>
+
+<script id="slider" type="text/template">
     <div class="slider-container">
         <div class="slide freeinformation">
           <p class="message">First slide consectetur adipiscing elit.</p>
@@ -31,4 +34,4 @@
           <span class="icon" data-slide-name="usercontent"></span>
         </div>
     </div>
-</div>
+</script>
