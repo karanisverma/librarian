@@ -1,4 +1,4 @@
-<div class="tabbed-menu">
+<div class="tabbed-menu submenu">
     <div class="left">
         <a class="social facebook" href="javascript:;"></a>
         <a class="social twitter" href="javascript:;"></a>
