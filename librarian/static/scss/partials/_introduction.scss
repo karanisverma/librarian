@@ -23,8 +23,19 @@
     right: 0;
     top: 30%;
   }
+
+  @include phone-portrait-wide {
+    padding: 20px;
+    .left-sat, .right-sat {
+      display: none;
+    }
+  }
+
   .slider-container {
-    display: none;
+    @include phone-potrait-wide {
+      display: none;
+    }
+
     .buttons {
       .icon {
         margin: 0 20px;
