@@ -43,9 +43,13 @@ def get_metadata(path, prefix, meta_filename='info.json', encoding='utf8'):
 
     Returns a parsed dict.
     """
-    # Unzips info.json to stdout
     prefix = prefix.rstrip('/')
     infopath = '{0}/{1}'.format(prefix, meta_filename)
+
+    # Unzips info.json to stdout. Does a try except because unzip on pi/pillar
+    # uses -p flag while on arch -c is used for writing to stdout
+    # Order is set before because the slight hiccup of a try/except will have
+    # less impact on a pc.
     try:
         string = subprocess.check_output(["unzip", "-qqp", path, infopath])
     except subprocess.CalledProcessError:
