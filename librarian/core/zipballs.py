@@ -162,7 +162,7 @@ def extract(path, target):
 
     # Extract the zip file to target
     try:
-        subprocess.call('unzip', '-qq', path, '-d', target)
+        subprocess.check_call(['unzip', '-qq', path, '-d', target])
     except Exception:
         # if extraction fails, e.g. no space on device, remove partially
         # extracted folder if it exists at all, and re-raise
