@@ -20,18 +20,29 @@ import pytest
 from librarian.core import zipballs as mod
 
 
-@mock.patch.object(mod.metadata, 'process_meta')
-@mock.patch.object(mod.zipfile, 'ZipFile', autospec=True)
-@mock.patch.object(mod.json, 'load')
-def test_get_metadata(load, ZipFile, process_meta):
-    z = ZipFile('foo.zip')
-    path = 'foo'
-    ret = mod.get_metadata(z, path)
-    z.open.assert_called_once_with('foo/info.json')
-    zcontext = z.open.return_value.__enter__  # open is a contenxt manager
-    load.assert_called_once_with(zcontext.return_value, 'utf8')
-    process_meta.assert_called_once_with(load.return_value)
-    assert ret == process_meta.return_value
+def test_get_metadata():
+    path = 'test_ball.zip'
+    hash = 'test_ball'
+    ret = mod.get_metadata(path, hash)
+    info = {
+            "archive": "offline",
+            "broadcast": "2015-07-03 17:07:09 UTC",
+            "images": 0,
+            "index": "index.html",
+            "is_partner": False,
+            "is_sponsored": False,
+            "keep_formatting": False,
+            "keywords": "testing,unittests,pytest",
+            "language": "en",
+            "license": "OF",
+            "multipage": False,
+            "partner": "foo",
+            "publisher": "foo",
+            "timestamp": "2015-07-03 17:07:09 UTC",
+            "title": "Test for test_get_metadata()",
+            "url": "http://bar.baz.com"
+        }
+    assert ret == mod.metadata.process_meta(info)
 
 
 def test_validate_no_path(*ignored):
