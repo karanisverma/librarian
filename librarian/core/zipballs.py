@@ -54,7 +54,7 @@ def get_metadata(path, prefix, meta_filename='info.json', encoding='utf8'):
         string = subprocess.check_output(["unzip", "-qqp", path, infopath])
     except subprocess.CalledProcessError:
         string = subprocess.check_output(["unzip", "-qqc", path, infopath])
-    raw_meta = json.load(string, encoding)
+    raw_meta = json.loads(string, encoding)
     return metadata.process_meta(raw_meta)
 
 
