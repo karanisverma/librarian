@@ -9,9 +9,6 @@
 ${page_title}
 </%block>
 
-${library_submenu.body()}
-${introduction.body()}
-
 <div class="h-bar">
     <form id="search" class="search">
         ${h.vinput('t', vals, _type='hidden')}
@@ -49,6 +46,7 @@ ${introduction.body()}
     </div>
 </div>
 
+${introduction.body()}
 <ul id="content-list" class="content-list" data-total="${int(pager.pages)}">
     ${content_list.body()}
 </ul>
