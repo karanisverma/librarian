@@ -1,8 +1,8 @@
 {
     "css/content-%(version)s.css": "a3efe597", 
     "css/dashboard-%(version)s.css": "dc20454c", 
-    "css/main-%(version)s.css": "7816c071", 
-    "css/wizard-%(version)s.css": "bda86601", 
+    "css/main-%(version)s.css": "8a3478aa", 
+    "css/wizard-%(version)s.css": "10813255", 
     "js/content-%(version)s.js": "d2062082", 
     "js/dashboard-%(version)s.js": "6dab1ac5", 
     "js/files-%(version)s.js": "d969cdea", 
