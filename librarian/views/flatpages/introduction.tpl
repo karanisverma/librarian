@@ -3,7 +3,7 @@
     <div class="left-sat"></div>
     <div class="right-sat"></div>
     <div class="inner">
-        <h1>${_("Worldwide broadcast from space, for free!")}</h1>
+        <h1>${_("Free data everywhere on Earth without an Internet connection")}</h1>
         <p>${_("""
         Outernet datacasts the best content from the web. There is no cost to receive
         the Outernet datacast and setting up a receiver is 
