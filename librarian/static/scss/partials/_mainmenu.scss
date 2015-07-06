@@ -6,6 +6,8 @@
 @import "sprites";
 
 .menu {
+  height: 120px;
+
   .logo {
     @include hide-text;
     @include misc-icon(logo_menu, yes);
@@ -67,6 +69,7 @@
   .dropdown.languages {
     display: inline-block;
     @include dropdown(arrow_down);
+    z-index: 1000;
 
     .dropdown-item {
       white-space: nowrap;
