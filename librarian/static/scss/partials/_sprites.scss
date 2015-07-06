@@ -11,3 +11,9 @@ $misc-2x: sprite-map('misc/2x/*.png', $spacing: 60px);
 @mixin misc-icon($name, $dimensions: yes) {
   @include sprite($misc, $misc-2x, $name, $dimensions);
 }
+
+$web: sprite-map('web_icons/1x/*.png', $spacing: 30px);
+$web-2x: sprite-map('web_icons/2x/*.png', $spacing: 60px);
+@mixin web-icon($name, $dimensions: yes) {
+  @include sprite($web, $web-2x, $name, $dimensions);
+}

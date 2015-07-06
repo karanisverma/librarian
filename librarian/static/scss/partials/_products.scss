@@ -1,0 +1,130 @@
+@import "outernet/mixins/colors";
+@import "outernet/mixins/fonts";
+@import "sprites";
+@import "switch";
+
+.products {
+  hr {
+    border: 0 none;
+    border-top: 1px solid $border;
+  }
+
+  .narrower {
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+
+  .title {
+    .main {
+      font-size: 250%;
+    }
+    .sub {
+      color: $sub;
+      margin-top: 0;
+    }
+  }
+
+  .pic-col {
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 100%;
+    min-height: 400px;
+  }
+
+  .pic-col.lantern {
+    background-image: image-url('web_misc/howto_lantern.jpg');
+  }
+
+  .pic-col.pillar {
+    background-image: image-url('web_misc/howto_pillar.jpg');
+  }
+
+  .pic-col.diy {
+    background-image: image-url('web_misc/howto_diy.jpg');
+  }
+
+  .pic-col.usb-stb {
+    background-image: image-url('web_misc/howto_usb.jpg');
+  }
+
+  .h-bar {
+    border: 0 none;
+    padding-bottom: 40px;
+    &.white {
+      background: $white;
+    }
+  }
+
+  .button {
+    .buy {
+      position: relative;
+      .icon {
+        position: absolute;
+        top: -2px;
+        @include with-hdpi('icons', 'cart_rev', yes);
+        &:hover {
+          @include with-hdpi('icons', 'cart_rev_hover', yes);
+        }
+      }
+      .label {
+        margin-left: 35px;
+      }
+    }
+  }
+
+  .overview {
+    margin: 30px 0;
+    label {
+      font-weight: normal;
+      display: inline-block;
+      margin: 0 20px;
+      cursor: auto;
+      .icon {
+        margin-right: 10px;
+      }
+      &.quantity .icon {
+        @include web-icon('howto_items_sub');
+      }
+      &.price .icon {
+        @include web-icon('howto_dollar_sub');
+      }
+      &.time .icon {
+        @include web-icon('howto_time_sub');
+      }
+    }
+  }
+
+  .items {
+    text-align: left;
+    .buy {
+      float: right;
+      .icon {
+        display: inline-block;
+        vertical-align: middle;
+        @include with-hdpi('icons', 'cart_link', yes);
+        &:hover {
+          @include with-hdpi('icons', 'cart_link_hover', yes);
+        }
+      }
+    }
+  }
+
+  .optional {
+    color: $sun;
+  }
+
+  .more-info {
+    margin-top: 40px;
+  }
+
+  .complete {
+    padding-top: 40px;
+    .icon {
+      display: inline-block;
+      @include icon('done');
+      margin-bottom: 1em;
+    }
+  }
+}
+

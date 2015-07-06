@@ -81,6 +81,33 @@
                 % for mi in menu_group('main'):
                     ${mi}
                 % endfor
+                <div class="submenu mobile">
+                    <a class="navicon buy-a-lantern" href="javascript:;">
+                        <span class="icon"></span>
+                        <span class="label">${_("Buy a Lantern!")}</span>
+                        </a>
+                    <a class="navicon" href="${url('flat:how_to_connect')}">
+                        <span class="icon"></span>
+                        <span class="label">${_("How to connect")}</span>
+                    </a>
+                    <a class="navicon" href="javascript:;">
+                        <span class="icon"></span>
+                        <span class="label">${_("Broadcast content")}</span>
+                    </a>
+                    <a class="navicon" href="javascript:;">
+                        <span class="icon"></span>
+                        <span class="label">${_("More about Outernet")}</span>
+                    </a>
+                    <a class="navicon store" href="http://store.outernet.is/">
+                        <span class="icon"></span>
+                        <span class="label">${_("Store")}</span>
+                    </a>
+                    <div class="menu-item">
+                        <a class="social facebook" href="javascript:;"></a>
+                        <a class="social twitter" href="javascript:;"></a>
+                        <a class="social google" href="javascript:;"></a>
+                    </div>
+                </div>
                 </div>
                 <div class="level2 level2-lang" id="alt-menu-lang">
                     <a class="top-trigger">${_('Back')}</a>

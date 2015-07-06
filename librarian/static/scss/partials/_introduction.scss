@@ -1,0 +1,83 @@
+@import "compass/typography";
+@import "outernet/mixins/fonts";
+@import "sprites";
+
+.introduction {
+  background-image: image-url('web_misc/intro_bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: $white;
+  text-align: center;
+  padding: 50px 200px;
+  position: relative;
+
+  .left-sat {
+    @include web-icon(intro_sat_left, yes);
+    position: absolute;
+    left: 0;
+    top: 10%;
+  }
+  .right-sat {
+    @include web-icon(intro_sat_right, yes);
+    position: absolute;
+    right: 0;
+    top: 30%;
+  }
+
+  @include phone-portrait-wide {
+    padding: 20px;
+    .left-sat, .right-sat {
+      display: none;
+    }
+  }
+
+  .slider-container {
+    @include phone-portrait-wide {
+      display: none;
+    }
+
+    .buttons {
+      .icon {
+        margin: 0 20px;
+        opacity: 0.5;
+        @include transition(opacity 0.5s);
+        cursor: pointer;
+        &.active, &:hover {
+          opacity: 1;
+        }
+        &[data-slide-name="freeinformation"] {
+          @include web-icon(freeinformation, yes);
+        }
+        &[data-slide-name="courseware"] {
+          @include web-icon(courseware, yes);
+        }
+        &[data-slide-name="entertainment"] {
+          @include web-icon(entertainment, yes);
+        }
+        &[data-slide-name="apps"] {
+          @include web-icon(apps, yes);
+        }
+        &[data-slide-name="emergencies"] {
+          @include web-icon(emergencies, yes);
+        }
+        &[data-slide-name="usercontent"] {
+          @include web-icon(usercontent, yes);
+        }
+      }
+    }
+    .slide {
+      @include transition(opacity 1s);
+      opacity: 0;
+      height: 0;
+      overflow: hidden;
+      @include bold;
+      .message {
+        margin: 1em 0 2em 0;
+      }
+    }
+    .slide.visible {
+      opacity: 1;
+      height: auto;
+    }
+  }
+}

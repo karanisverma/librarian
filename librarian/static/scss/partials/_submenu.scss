@@ -1,0 +1,105 @@
+@import "outernet/mixins/colors";
+@import "outernet/mixins/hyperlinks";
+@import "outernet/mixins/media_query";
+
+.submenu {
+  &.mobile {
+    border-top: 0.5em solid $earth;
+  }
+  .social {
+    margin-right: 0.3em;
+
+    &:hover {
+      border-bottom: 0 none;
+    }
+
+    &.facebook {
+      @include web-icon(fb, yes);
+      &:hover {
+        @include web-icon(fb_hover, yes);
+      }
+    }
+    &.twitter {
+      @include web-icon(tw, yes);
+      &:hover {
+        @include web-icon(tw_hover, yes);
+      }
+    }
+    &.google {
+      @include web-icon(go, yes);
+      &:hover {
+        @include web-icon(go_hover, yes);
+      }
+    }
+  }
+  .store .icon {
+    margin-right: 0.5em;
+    @include icon(cart, yes);
+    &:hover {
+      @include icon(cart_hover, yes);
+    }
+  }
+
+  .menu-item {
+    display: block;
+    line-height: 60px;
+    padding: 0px 20px;
+    border-bottom: 1px solid #DDD;
+    color: #555;
+    a {
+      padding: 0;
+      border: 0 none;
+    }
+  }
+}
+
+.tabbed-menu {
+  @include narrower-than($menu-cutoff) {
+    display: none;
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    height: 0;
+    clear: both;
+  }
+
+  .left, .right {
+    float: left;
+    position: relative;
+  }
+  .right {
+    float: right;
+    text-align: right;
+  }
+  .lantern {
+    background-image: image-url('web_misc/temp_cta.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 0;
+    width: 83px;
+    height: 76px;
+    z-index: 1000;
+  }
+  .buy-a-lantern {
+    @include link-cta;
+    margin-left: 6em;
+    &:hover {
+      border-bottom: 3px solid transparent;
+    }
+    .icon {
+      margin-right: 10px;
+      @include icon(cta, yes);
+      &:hover {
+        @include icon(cta_hover, yes);
+      }
+    }
+  }
+  .sublink {
+    &:last-child {
+      margin-right: 0;
+    }
+    color: $universe;
+  }
+}
