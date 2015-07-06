@@ -6,6 +6,10 @@
 body {
   padding-top: 120px;
   background: $universe;
+
+  @include narrower-than($menu-cutoff) {
+    padding-top: 60px;   
+  }
 }
 
 .body {
