@@ -46,7 +46,10 @@ ${page_title}
     </div>
 </div>
 
-${introduction.body()}
+% if pager.page == 1:
+    ${introduction.body()}
+% endif
+
 <ul id="content-list" class="content-list" data-total="${int(pager.pages)}">
     ${content_list.body()}
 </ul>
