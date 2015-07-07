@@ -1,31 +1,12 @@
 {
-    "css/content-%(version)s.css": "a3efe597", 
+    "css/content-%(version)s.css": "76c83d02", 
     "css/dashboard-%(version)s.css": "dc20454c", 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    "css/main-%(version)s.css": "943ddd14", 
-    "css/wizard-%(version)s.css": "2b0f521b", 
-=======
-    "css/main-%(version)s.css": "8a3478aa", 
-    "css/wizard-%(version)s.css": "10813255", 
->>>>>>> feature/webdemo-homepage-97995500
+    "css/main-%(version)s.css": "b19fa04b", 
+    "css/wizard-%(version)s.css": "17e96f78", 
     "js/content-%(version)s.js": "d2062082", 
     "js/dashboard-%(version)s.js": "6dab1ac5", 
     "js/files-%(version)s.js": "d969cdea", 
     "js/reader-%(version)s.js": "2f328060", 
-    "js/setup-%(version)s.js": "53b72773", 
-<<<<<<< HEAD
-=======
-    "css/main-%(version)s.css": "a12bce65", 
-    "css/wizard-%(version)s.css": "0219a103", 
-    "js/content-%(version)s.js": "d5d568de", 
-    "js/dashboard-%(version)s.js": "6dab1ac5", 
-    "js/files-%(version)s.js": "d969cdea", 
-    "js/reader-%(version)s.js": "2f328060", 
     "js/setup-%(version)s.js": "10ea5fdc", 
->>>>>>> nomerge/l20150707.2
     "js/ui-%(version)s.js": "89f3cc90"
-=======
-    "js/ui-%(version)s.js": "14406d1d"
->>>>>>> feature/webdemo-homepage-97995500
 }
