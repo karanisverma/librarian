@@ -3,15 +3,97 @@
 @import "outernet/mixins/media_query";
 
 .submenu {
+  padding: 0 20px;
+
+  @include narrower-than($menu-cutoff) {
+    display: none;
+  }
+
+  a, .active {
+    display: inline-block;
+    line-height: 58px;
+    margin-right: 2em;
+    color: $iconic;
+  }
+
+  a {
+    color: $sub;
+
+    &:visited {
+      color: $sub;
+    } 
+
+    &:hover {
+      color: $base;
+    }
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    height: 0;
+    clear: both;
+  }
+
+  .left, .right {
+    float: left;
+    position: relative;
+  }
+
+  .right {
+    float: right;
+    text-align: right;
+  }
+
+  .lantern {
+    background-image: image-url('web_misc/temp_cta.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 0;
+    width: 83px;
+    height: 76px;
+  }
+
+  .buy-a-lantern {
+    @include link-cta;
+
+    .caption {
+      position: relative;
+      top: 2px;
+    }
+
+    &:hover {
+      color: $fire25d;
+
+      .icon {
+        @include icon(cta_hover, yes);
+      }
+    }
+
+    margin-left: 6em;
+    .icon {
+      margin-right: 10px;
+      @include icon(cta, yes);
+    }
+  }
+  .sublink {
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  background: $white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
   &.mobile {
     border-top: 0.5em solid $earth;
   }
+
   .social {
     margin-right: 0.3em;
-
-    &:hover {
-      border-bottom: 0 none;
-    }
 
     &.facebook {
       @include web-icon(fb, yes);
@@ -32,10 +114,14 @@
       }
     }
   }
-  .store .icon {
-    margin-right: 0.5em;
-    @include icon(cart, yes);
-    &:hover {
+
+  .store {
+    .icon {
+      margin-right: 0.5em;
+      @include icon(cart, yes);
+    }
+
+    &:hover .icon {
       @include icon(cart_hover, yes);
     }
   }
@@ -50,56 +136,5 @@
       padding: 0;
       border: 0 none;
     }
-  }
-}
-
-.tabbed-menu {
-  @include narrower-than($menu-cutoff) {
-    display: none;
-  }
-
-  &:after {
-    content: '';
-    display: block;
-    height: 0;
-    clear: both;
-  }
-
-  .left, .right {
-    float: left;
-    position: relative;
-  }
-  .right {
-    float: right;
-    text-align: right;
-  }
-  .lantern {
-    background-image: image-url('web_misc/temp_cta.png');
-    background-repeat: no-repeat;
-    position: absolute;
-    bottom: 0;
-    width: 83px;
-    height: 76px;
-    z-index: 1000;
-  }
-  .buy-a-lantern {
-    @include link-cta;
-    margin-left: 6em;
-    &:hover {
-      border-bottom: 3px solid transparent;
-    }
-    .icon {
-      margin-right: 10px;
-      @include icon(cta, yes);
-      &:hover {
-        @include icon(cta_hover, yes);
-      }
-    }
-  }
-  .sublink {
-    &:last-child {
-      margin-right: 0;
-    }
-    color: $universe;
   }
 }

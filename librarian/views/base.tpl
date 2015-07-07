@@ -1,3 +1,5 @@
+<%namespace name='library_submenu' file='_library_submenu.tpl'/>
+
 <!doctype html>
 
 <html lang="${request.locale}"${' dir="rtl"' if th.is_rtl(request.locale) == True else ''}>
@@ -43,6 +45,7 @@
                     <a href="#nav">Site menu</a>
                 </div>
             </div>
+            ${library_submenu.body()}
         </header>
         </%block>
 

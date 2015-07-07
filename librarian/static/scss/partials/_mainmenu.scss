@@ -6,6 +6,12 @@
 @import "sprites";
 
 .menu {
+  height: 120px;
+
+  @include narrower-than($menu-cutoff) {
+    height: 60px;   
+  }
+
   .logo {
     @include hide-text;
     @include misc-icon(logo_menu, yes);
@@ -77,6 +83,7 @@
   .dropdown.languages {
     display: inline-block;
     @include dropdown(arrow_down);
+    z-index: 1000;
 
     .dropdown-item {
       white-space: nowrap;

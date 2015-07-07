@@ -1,12 +1,9 @@
 <%inherit file="base.tpl"/>
-<%namespace name='library_submenu' file='_library_submenu.tpl'/>
 
 <%block name="title">
 ## Translators, used as page title
 ${_('Files')}
 </%block>
-
-${library_submenu.body()}
 
 <div class="h-bar">
     ${h.form('get', _class='location-bar')}
