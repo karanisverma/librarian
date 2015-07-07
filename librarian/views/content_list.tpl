@@ -46,7 +46,7 @@ ${page_title}
     </div>
 </div>
 
-% if pager.page == 1:
+% if pager.page <= 1:
     ${introduction.body()}
 % endif
 
