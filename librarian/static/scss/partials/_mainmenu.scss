@@ -57,7 +57,6 @@
       .icon {
         @include icon-button(alert);
       }
-
       .notifications-label {
         display: none;
       }
@@ -67,9 +66,8 @@
       .icon {
         @include icon-button(alert_active);
       }
-
       .notifications-label {
-        display: none;
+        display: inline-block;
       }
     }
   }
