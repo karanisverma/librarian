@@ -57,9 +57,17 @@
       .icon {
         @include icon-button(alert);
       }
+      .notifications-label {
+        display: none;
+      }
+    }
 
-      .label {
-        display: none !important;
+    &.notifications-active {
+      .icon {
+        @include icon-button(alert_active);
+      }
+      .notifications-label {
+        display: inline-block;
       }
     }
   }

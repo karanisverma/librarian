@@ -9,6 +9,7 @@ file that comes with the source code, or http://www.gnu.org/licenses/gpl.txt.
 """
 
 import os
+import subprocess
 
 try:
     from unittest import mock
@@ -20,18 +21,29 @@ import pytest
 from librarian.core import zipballs as mod
 
 
-@mock.patch.object(mod.metadata, 'process_meta')
-@mock.patch.object(mod.zipfile, 'ZipFile', autospec=True)
-@mock.patch.object(mod.json, 'load')
-def test_get_metadata(load, ZipFile, process_meta):
-    z = ZipFile('foo.zip')
-    path = 'foo'
-    ret = mod.get_metadata(z, path)
-    z.open.assert_called_once_with('foo/info.json')
-    zcontext = z.open.return_value.__enter__  # open is a contenxt manager
-    load.assert_called_once_with(zcontext.return_value, 'utf8')
-    process_meta.assert_called_once_with(load.return_value)
-    assert ret == process_meta.return_value
+def test_get_metadata():
+    path = 'test_ball.zip'
+    hash = 'test_ball'
+    ret = mod.get_metadata(path, hash)
+    info = {
+            "archive": "offline",
+            "broadcast": "2015-07-03 17:07:09 UTC",
+            "images": 0,
+            "index": "index.html",
+            "is_partner": False,
+            "is_sponsored": False,
+            "keep_formatting": False,
+            "keywords": "testing,unittests,pytest",
+            "language": "en",
+            "license": "OF",
+            "multipage": False,
+            "partner": "foo",
+            "publisher": "foo",
+            "timestamp": "2015-07-03 17:07:09 UTC",
+            "title": "Test for test_get_metadata()",
+            "url": "http://bar.baz.com"
+        }
+    assert ret == mod.metadata.process_meta(info)
 
 
 def test_validate_no_path(*ignored):
@@ -253,13 +265,13 @@ def test_backup_returns_none_if_no_backup_is_done(rename, exists):
     assert mod.backup('foo') is None
 
 
+@mock.patch.object(subprocess, 'check_call')
 @mock.patch.object(mod.shutil, 'rmtree')
 @mock.patch.object(mod.os.path, 'exists')
 @mock.patch.object(mod.shutil, 'move')
 @mock.patch.object(mod, 'backup')
-@mock.patch.object(mod.zipfile, 'ZipFile')
 @mock.patch.object(mod.content, 'to_path')
-def test_extract_success(to_path, ZipFile, backup, move, exists, rmtree):
+def test_extract_success(to_path, backup, move, exists, rmtree, check_call):
     path = '/var/spool/downloads/content/202ab62b551f6d7fc002f65652525544.zip'
     target = '/srv/zipballs'
     extract_path = '/srv/zipballs/202ab62b551f6d7fc002f65652525544'
@@ -268,11 +280,11 @@ def test_extract_success(to_path, ZipFile, backup, move, exists, rmtree):
     to_path.return_value = content_path
     backup.return_value = '/path/to/cont.backup'
     exists.return_value = True
+    subprocess.check_call.return_value = True
 
     assert mod.extract(path, target) == content_path
 
-    ZipFile.assert_called_once_with(path)
-    ZipFile.return_value.extractall.assert_called_once_with(target)
+    subprocess.check_call.assert_called_once_with(['unzip', '-qq', path, '-d', target])
 
     backup.assert_called_once_with(content_path)
     move.assert_called_once_with(extract_path, content_path)
@@ -280,27 +292,26 @@ def test_extract_success(to_path, ZipFile, backup, move, exists, rmtree):
     rmtree.assert_called_once_with(backup.return_value)
 
 
+@mock.patch.object(subprocess, 'check_call')
 @mock.patch.object(mod.shutil, 'rmtree')
 @mock.patch.object(mod.os.path, 'exists')
 @mock.patch.object(mod.shutil, 'move')
 @mock.patch.object(mod, 'backup')
-@mock.patch.object(mod.zipfile, 'ZipFile')
 @mock.patch.object(mod.content, 'to_path')
-def test_extract_fail(to_path, ZipFile, backup, move, exists, rmtree):
+def test_extract_fail(to_path, backup, move, exists, rmtree, check_call):
     path = '/var/spool/downloads/content/202ab62b551f6d7fc002f65652525544.zip'
     target = '/srv/zipballs'
     extract_path = '/srv/zipballs/202ab62b551f6d7fc002f65652525544'
     content_path = '/srv/zipballs/202/ab6/2b5/51f/6d7/fc0/02f/656/525/255/44'
 
     to_path.return_value = content_path
-    ZipFile.return_value.extractall.side_effect = OSError()
     exists.return_value = True
+    check_call.side_effect = subprocess.CalledProcessError(1, ['unzip', '-qq', path, '-d', target])
 
-    with pytest.raises(OSError):
+    with pytest.raises(subprocess.CalledProcessError):
         mod.extract(path, target)
 
-    ZipFile.assert_called_once_with(path)
-    ZipFile.return_value.extractall.assert_called_once_with(target)
+    check_call.assert_called_once_with(['unzip', '-qq', path, '-d', target])
     exists.assert_called_once_with(extract_path)
     rmtree.assert_called_once_with(extract_path)
     assert not backup.called

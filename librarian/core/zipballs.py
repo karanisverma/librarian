@@ -12,6 +12,7 @@ import os
 import json
 import shutil
 import zipfile
+import subprocess
 try:
     from io import BytesIO as StringIO
 except ImportError:
@@ -29,7 +30,7 @@ class ValidationError(Exception):
         super(ValidationError, self).__init__(msg)
 
 
-def get_metadata(zfile, prefix, meta_filename='info.json', encoding='utf8'):
+def get_metadata(path, prefix, meta_filename='info.json', encoding='utf8'):
     """ Get metadata from zipball
 
     The ``prefix`` is the directory in which the metadata file is located,
@@ -44,9 +45,17 @@ def get_metadata(zfile, prefix, meta_filename='info.json', encoding='utf8'):
     """
     prefix = prefix.rstrip('/')
     infopath = '{0}/{1}'.format(prefix, meta_filename)
-    with zfile.open(infopath) as info:
-        raw_meta = json.load(info, encoding)
-        return metadata.process_meta(raw_meta)
+
+    # Unzips info.json to stdout. Does a try except because unzip on pi/pillar
+    # uses -p flag while on arch -c is used for writing to stdout
+    # Order is set before because the slight hiccup of a try/except will have
+    # less impact on a pc.
+    try:
+        string = subprocess.check_output(["unzip", "-qqp", path, infopath])
+    except subprocess.CalledProcessError:
+        string = subprocess.check_output(["unzip", "-qqc", path, infopath])
+    raw_meta = json.loads(string, encoding)
+    return metadata.process_meta(raw_meta)
 
 
 def validate(path, meta_filename='info.json'):
@@ -98,7 +107,7 @@ def validate(path, meta_filename='info.json'):
         raise ValidationError(path, 'invalid content directory strcuture')
     # Inspect metadata
     try:
-        meta = get_metadata(zfile, md5, meta_filename=meta_filename)
+        meta = get_metadata(path, md5, meta_filename=meta_filename)
     except metadata.MetadataError as exc:
         raise ValidationError(path, str(exc))
     except (KeyError, ValueError):
@@ -152,9 +161,8 @@ def extract(path, target):
     extract_path = os.path.join(target, name)
 
     # Extract the zip file to target
-    zfile = zipfile.ZipFile(path)
     try:
-        zfile.extractall(target)
+        subprocess.check_call(['unzip', '-qq', path, '-d', target])
     except Exception:
         # if extraction fails, e.g. no space on device, remove partially
         # extracted folder if it exists at all, and re-raise
