@@ -1,12 +1,9 @@
 <%inherit file='/base.tpl'/>
-<%namespace name='library_submenu' file='/_library_submenu.tpl'/>
 
 <%block name="title">
 ## Translators, used as page title
 ${_("Lantern")}
 </%block>
-
-${library_submenu.body()}
 
 <div class="products">
     <div class="h-bar narrower title lantern">
