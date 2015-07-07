@@ -4,8 +4,12 @@
 @import "outernet/mixins/media_query";
 
 body {
-  padding-top: 60px;
+  padding-top: 120px;
   background: $universe;
+
+  @include narrower-than($menu-cutoff) {
+    padding-top: 60px;   
+  }
 }
 
 .body {
