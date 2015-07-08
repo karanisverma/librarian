@@ -29,10 +29,10 @@
 <script id="slider" type="text/template">
     <div class="slider-container">
         <div class="slide courseware">
-            <p class="message">${_('Ebooks, video, software, webpages… any digital file can be datacast over Outernet.')}</p>
+            <p class="message">${_('Any digital file can be datacast over Outernet.')}</p>
         </div>
         <div class="slide usercontent">
-            <p class="message">${_('Outernet is a one-way datacast, so browsing is completely anonymous and cannot be tracked.')}</p>
+            <p class="message">${_('Outernet is a one-way, untrackable, anonymous datacast.')}</p>
         </div>
         <div class="slide apps">
             <p class="message"><a href="http://store.outernet.is/">${_('Buy an Outernet receiver or build your own.')}</a></p>
