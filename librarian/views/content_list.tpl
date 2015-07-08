@@ -46,7 +46,7 @@ ${page_title}
     </div>
 </div>
 
-% if pager.page <= 1:
+% if pager.page <= 1 and base_path == i18n_url('content:list'):
     ${introduction.body()}
 % endif
 
