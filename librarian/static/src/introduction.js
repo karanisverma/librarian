@@ -2,7 +2,7 @@
 (function ($) {
     'use strict';
     var delay = 3000,  // slide change delay in milliseconds
-        intro = $('.introduction'),
+        intro = $('.note'),
         slider = $(window.templates.slider);
 
     function deactivateAll() {
@@ -35,6 +35,6 @@
         setTimeout(startSlide, delay);
     }
 
-    intro.append(slider);
+    intro.before(slider);
     startSlide();
 }(this.jQuery));

@@ -29,5 +29,12 @@ def routes(app):
             ['GET'],
             '/how-to-connect/pillar/',
             {}
+        ), (
+            'flat:about',
+            app.exts.flat_pages.pillar,
+            ['GET'],
+            '/about-outernet/',
+            {}
         )
+
     )
