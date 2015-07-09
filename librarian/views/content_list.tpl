@@ -9,10 +9,6 @@
 ${page_title}
 </%block>
 
-% if pager.page <= 1 and base_path == i18n_url('content:list'):
-    ${introduction.body()}
-% endif
-
 <div class="h-bar">
     <form id="search" class="search">
         ${h.vinput('t', vals, _type='hidden')}
@@ -36,11 +32,23 @@ ${page_title}
 
 <div class="filters">
     <div class="form langs">
+        <form id="lang" class="downloads-langs">
+            <input type="hidden" name="q" value="${query or ''}">
+            <input type="hidden" name="t" value="${tag_id or ''}">
+            ${h.vselect('lang', th.content_languages(), lang)}
+            ## Translators, used as label for language filter button
+            <button class="fake-go">${_('Filter')}</button>
+            </p>
+        </form>
     </div>
     <div class="forms pager">
         ${simple_pager.prev_next_pager()}
     </div>
 </div>
+
+% if pager.page <= 1 and base_path == i18n_url('content:list'):
+    ${introduction.body()}
+% endif
 
 <ul id="content-list" class="content-list" data-total="${int(pager.pages)}">
     ${content_list.body()}
