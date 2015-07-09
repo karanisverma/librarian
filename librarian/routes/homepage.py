@@ -18,18 +18,6 @@ def routes(app):
             '/how-to-connect/',
             {}
         ), (
-            'flat:how_to_lantern',
-            app.exts.flat_pages.lantern,
-            ['GET'],
-            '/how-to-connect/lantern/',
-            {}
-        ), (
-            'flat:how_to_pillar',
-            app.exts.flat_pages.pillar,
-            ['GET'],
-            '/how-to-connect/pillar/',
-            {}
-        ), (
             'flat:about',
             app.exts.flat_pages.pillar,
             ['GET'],
