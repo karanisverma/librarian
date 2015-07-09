@@ -1,22 +1,12 @@
 {
     "css/content-%(version)s.css": "b88598bc", 
     "css/dashboard-%(version)s.css": "dc20454c", 
-<<<<<<< HEAD
-    "css/main-%(version)s.css": "ce8bf02f", 
-    "css/wizard-%(version)s.css": "9ef67f78", 
+    "css/main-%(version)s.css": "4e8c8f53", 
+    "css/wizard-%(version)s.css": "17e96f78", 
     "js/content-%(version)s.js": "5bf127cd", 
     "js/dashboard-%(version)s.js": "6dab1ac5", 
     "js/files-%(version)s.js": "d969cdea", 
     "js/reader-%(version)s.js": "2f328060", 
-    "js/setup-%(version)s.js": "53b72773", 
-=======
-    "css/main-%(version)s.css": "44d7afe0", 
-    "css/wizard-%(version)s.css": "7e0a3e58", 
-    "js/content-%(version)s.js": "d5d568de", 
-    "js/dashboard-%(version)s.js": "6dab1ac5", 
-    "js/files-%(version)s.js": "d969cdea", 
-    "js/reader-%(version)s.js": "2f328060", 
     "js/setup-%(version)s.js": "10ea5fdc", 
->>>>>>> nomerge/l20150709.1
     "js/ui-%(version)s.js": "89f3cc90"
 }
