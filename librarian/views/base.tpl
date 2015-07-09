@@ -85,30 +85,30 @@
                     ${mi}
                 % endfor
                 <div class="submenu mobile">
-                    <a class="navicon buy-a-lantern" href="javascript:;">
+                    <a class="navicon buy-a-lantern" href="https://www.indiegogo.com/projects/lantern-one-device-free-data-from-space-forever">
                         <span class="icon"></span>
                         <span class="label">${_("Buy a Lantern!")}</span>
-                        </a>
+                    </a>
                     <a class="navicon" href="${url('flat:how_to_connect')}">
                         <span class="icon"></span>
-                        <span class="label">${_("How to connect")}</span>
+                        <span class="label">${_("Connect")}</span>
                     </a>
-                    <a class="navicon" href="javascript:;">
+                    <a class="navicon" href="https://broadcast.outernet.is/">
                         <span class="icon"></span>
-                        <span class="label">${_("Broadcast content")}</span>
+                        <span class="label">${_("Broadcast")}</span>
                     </a>
-                    <a class="navicon" href="javascript:;">
+                    <a class="navicon" href="https://wiki.outernet.is/">
                         <span class="icon"></span>
-                        <span class="label">${_("More about Outernet")}</span>
+                        <span class="label">${_("About")}</span>
                     </a>
                     <a class="navicon store" href="http://store.outernet.is/">
                         <span class="icon"></span>
                         <span class="label">${_("Store")}</span>
                     </a>
                     <div class="menu-item">
-                        <a class="social facebook" href="javascript:;"></a>
-                        <a class="social twitter" href="javascript:;"></a>
-                        <a class="social google" href="javascript:;"></a>
+                        <a class="social facebook" href="https://www.facebook.com/OuternetForAll"></a>
+                        <a class="social twitter" href="https://twitter.com/outernetforall"></a>
+                        <a class="social google" href="https://plus.google.com/+OuternetIs"></a>
                     </div>
                 </div>
                 </div>
