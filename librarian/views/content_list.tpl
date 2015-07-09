@@ -9,6 +9,10 @@
 ${page_title}
 </%block>
 
+% if pager.page <= 1 and base_path == i18n_url('content:list'):
+    ${introduction.body()}
+% endif
+
 <div class="h-bar">
     <form id="search" class="search">
         ${h.vinput('t', vals, _type='hidden')}
@@ -45,10 +49,6 @@ ${page_title}
         ${simple_pager.prev_next_pager()}
     </div>
 </div>
-
-% if pager.page <= 1 and base_path == i18n_url('content:list'):
-    ${introduction.body()}
-% endif
 
 <ul id="content-list" class="content-list" data-total="${int(pager.pages)}">
     ${content_list.body()}
