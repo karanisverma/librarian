@@ -75,5 +75,6 @@ ${_("How to Connect to Outernet")}
                 </span>
             </a>
         </p>
+        <p class="description">${_("Outernet uses Free to Air television signals that are unlocked all over the world. If you find a tuner that works with a Raspberry Pi or another type of computer, let us know! We encourage the community to experiment with tuners, drivers, and computer modules and make something better than what we have. Consider the challenge issued.")}</p>
     </div>
 </div>
