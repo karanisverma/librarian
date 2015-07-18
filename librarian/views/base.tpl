@@ -14,16 +14,24 @@
         <%block name="extra_head"/>
     </head>
     <body>
-        <%block name="header">
-        <header class="menu">
-            <div class="menu-subblock">
-                <a class="logo" href="${i18n_url('content:list')}"><span lang="en">Outernet</span></a>
-            </div>
-            <div class="dropdown languages menu-subblock">
-                <a class="dropdown-toggle" href="#"><span class="down-arrow"></span> ${th.lang_name_safe(request.locale)}</a>
-                <ul class="dropdown-body">
+        <div class="md-modal md-effect-19" id="modal-19">
+            <div class="md-content">
+                <section id="searchbox">
+                <form id="search" class="search osearch">
+                    ${h.vinput('t', vals, _type='hidden')}
+                    ${h.vinput('lang', vals, _type='hidden')}
+                    ${h.vinput('p', vals, _type='hidden')}
+                    ${h.vinput('pp', vals, _type='hidden')}
+                    <label for="q"><span class="icon search">${_('Search')}</label>
+                    ${h.vinput('q', vals, _class='search', _type='text', _id="langsearch",placeholder=_('Search titles'))}
+                    <button class="primary">${_('Search')}</button>
+                </form>
+                </section>
+
+                <div>
+                <ul class="">
                 % for locale, lang in languages:
-                    <li class="dropdown-item">
+                    <li class="">
                         % if locale != request.locale:
                         <a class="language" href="${i18n_path(locale=locale)}" dir="${th.dir(locale)}" lang="${locale}">${lang}</a>
                         % else:
@@ -31,14 +39,28 @@
                         % endif
                     </li>
                 % endfor
-                </ul>
+                </ul>                    
+                <button class="md-close">Close</button>
+                </div>
             </div>
+        </div>
+        <div class="container">
+        <%block name="header">
+        <header class="menu">
+            <div class="menu-subblock">
+                <a class="logo" href="${i18n_url('content:list')}"><span lang="en">Outernet</span></a>
+            </div>
+        
             <div class="menu-block-right">
+                
                 <nav id="nav" class="menu-subblock toolbar">
                     % for mi in menu_group('main'):
                         ${mi}
                     % endfor
+                    <a class="md-trigger md-setperspective" data-modal="modal-19"><img  src="../static/img/icons/transbw.png"></img></a>
+               ## <a> </a>
                 </nav>
+
                 <div class="hamburger">
                     <a href="#nav">Site menu</a>
                 </div>
@@ -65,7 +87,9 @@
             <p class="copyright">2014-2015 <span lang="en">Outernet Inc</span></p>
         </footer>
         </%block>
-
+        </div>
+        <div class="md-overlay"></div>
+        
         <script type="text/template" id="menu">
             <nav class="alt-menu">
                 <div class="level1" id="top">
@@ -101,5 +125,6 @@
         <%block name="script_templates"/>
         <script src="${assets['js/ui']}"></script>
         <%block name="extra_scripts"/>
+        </div>
     </body>
 </html>
