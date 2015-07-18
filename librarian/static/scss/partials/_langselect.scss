@@ -1,0 +1,179 @@
+@import "compass/css3";
+@import "compass/css3/user-interface";
+
+.overlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(153,204,51,0.9);
+
+	.overlay-close {
+		width: 35px;
+		height: 35px;
+		position: absolute;
+		right: 0px;
+		top: 15px;
+		overflow: hidden;
+		border: none;
+		background: url(../img/icons/cross.png) no-repeat center center;
+		text-indent: 200%;
+		color: transparent;
+		outline: none;
+		z-index: 100;
+		}
+
+	nav {
+		text-align: center;
+		position: relative;
+		top: 30%;
+		height: 60%;
+		@include transform(translateY(-50%));
+		}
+
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 0 auto;
+		display: inline-block;
+		height: 100%;
+		position: relative;
+		width:80%;
+
+		li {
+			display: block;
+			float:left;
+			height: 20%;
+			height: calc(100% / 5);
+			min-height: 54px;
+			@include backface-visibility(hidden);
+			
+			a {
+				font-size: 23px;
+				font-weight: 300;
+				display: block;
+				color: #000;
+				float: left;
+				padding: 1.5em 1.5em .5em 1.5em;
+				@include transition-property( color 0.2s);
+				transition: color 0.2s;
+				border-bottom: solid 2px;
+				min-width: 5em;
+				border-color: rgba(95, 158, 160, 0.5);				
+				}
+			a:visited{
+				 color: black;
+				 }
+			a:hover,a:focus {
+				color: #f0f0f0;
+			}
+		}
+	}
+}
+
+
+
+
+	/* Effects */
+	.overlay-cornershape {
+		background: transparent;
+		visibility: hidden;
+		@include transition-property( visibility 0s 0.5s);
+		transition: visibility 0s 0.5s;
+
+		svg {
+			position: absolute;
+			top: 0;
+			left: 0;
+			}
+
+		.overlay-path {
+			fill: rgba(102, 202, 215, 0.87);
+			}
+	}
+
+	.overlay-cornershape.open {
+		visibility: visible;
+		@include transition-property(none);
+		transition: none;
+	}
+
+	.overlay-cornershape svg {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	.overlay-cornershape .overlay-path {
+		fill: rgba(102, 202, 215, 0.87);
+	}
+
+	.overlay-cornershape nav,
+	.overlay-cornershape .overlay-close {
+		opacity: 0;
+		@include transition-property( opacity 0.4s 0.4s);
+		transition: opacity 0.4s 0.4s;
+	}
+
+	.overlay-cornershape.open nav,
+	.overlay-cornershape.open .overlay-close {
+		opacity: 1;
+		@include transition-delay(0.4s);
+		
+	}
+
+	.overlay-cornershape.close nav,
+	.overlay-cornershape.close .overlay-close {
+		@include transition-delay(0s);
+	}
+
+	.overlay-close+.h-bar{
+	  margin-top: 3.78em;
+	}
+
+	#trigger-overlay{
+	  display:none; 
+	  magin-right:1em;
+	  padding-left:1em;
+	    img{
+			float: right;
+			height: 23px;
+			position: relative;
+			top: .5em;
+		}
+	}
+
+    .selected{
+		color:white;
+	}
+
+	.langshow {
+	  opacity: 1;
+	  @include transition-property( opacity 0.4s 0.4s);
+      transition: opacity 0.4s 0.4s;
+	}
+
+	.langhide {
+	  opacity: 0;
+	  @include transition-property( opacity 0.4s 0.4s);
+	  transition: opacity 0.4s 0.4s;
+	}
+	.langlistNojs {
+	  float: left;
+	  background-color: rgba(0, 0, 0, 0.77);
+	  position: absolute;
+	  right: 0;
+	  padding: 1em 0em 0.5em 0.5em;
+	  top: 60px;
+	}
+	#nojs{
+	  display:inline-block;
+	  padding: 0em 1em 1.3em 1em;
+	}
+	#nojs> div{
+	  display:none;
+	}
+	#nojs:hover>div{
+      display:block;
+	}

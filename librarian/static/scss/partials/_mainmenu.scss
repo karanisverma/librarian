@@ -54,6 +54,7 @@
     }
 
     &.notifications {
+      margin:0em;
       .icon {
         @include icon-button(alert);
       }
@@ -76,7 +77,10 @@
 
   .dropdown.languages {
     display: inline-block;
-    @include dropdown(arrow_down);
+    position: relative;
+    left: -25px;
+    top: 7px;
+    
 
     .dropdown-item {
       white-space: nowrap;
@@ -126,6 +130,10 @@
     .icon {
       @include app-icon($navicon);
     }
+  }
+
+  li{
+  @include col4;
   }
 
   #nav .#{$navicon} {

@@ -20,29 +20,64 @@
                 <a class="logo" href="${i18n_url('content:list')}"><span lang="en">Outernet</span></a>
             </div>
             <div class="dropdown languages menu-subblock">
-                <a class="dropdown-toggle" href="#"><span class="down-arrow"></span> ${th.lang_name_safe(request.locale)}</a>
-                <ul class="dropdown-body">
-                % for locale, lang in languages:
-                    <li class="dropdown-item">
-                        % if locale != request.locale:
-                        <a class="language" href="${i18n_path(locale=locale)}" dir="${th.dir(locale)}" lang="${locale}">${lang}</a>
-                        % else:
-                        <span class="language current" dir="${th.dir(locale)}" lang="${locale}"><span class="selected"></span>${lang}</span>
-                        % endif
-                    </li>
-                % endfor
-                </ul>
+                <a class="dropdown-toggle" href="#">${th.lang_name_safe(request.locale)}</a>
             </div>
+
             <div class="menu-block-right">
                 <nav id="nav" class="menu-subblock toolbar">
                     % for mi in menu_group('main'):
                         ${mi}
                     % endfor
+                    ##For Java Script Version
+                    <a  id="trigger-overlay"><img type="button" src="../static/img/icons/transbw.png"></img></a>
+                    ##For non-js version
+                    <div id="nojs">   <a>${th.lang_name_safe(request.locale)}</a>
+                        <div class="langlistNojs">
+                            <ul>
+                                % for locale, lang in languages:
+                                    <li class="dropdown-item">
+                                    % if locale != request.locale:
+                                        <a class="language" href="${i18n_path(locale=locale)}" dir="${th.dir(locale)}" lang="${locale}">${lang}</a>
+                                        % else:
+                                        <a  href="#" class="language current" dir="${th.dir(locale)}" lang="${locale}"><span class="selected">${lang}</a></span>
+                                        % endif
+                                    </li>
+                                % endfor
+                            </ul>
+                        </div>
+                    </div>
                 </nav>
-                <div class="hamburger">
-                    <a href="#nav">Site menu</a>
-                </div>
             </div>
+              
+            ##Overlay SVG 
+            <div class="overlay overlay-cornershape close" data-path-to="m 0,0 1439.999975,0 0,805.99999 -1439.999975,0 z">
+            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1440 806" preserveAspectRatio="none">
+                <path class="overlay-path" d="m 0,0 1439.999975,0 0,805.99999 0,-805.99999 z"/>
+            </svg>
+            <button type="button" class="overlay-close">Close</button>        
+            ##Similar search bar is used to maintain visual consistency.
+            ##Search Button is dummy as search occur at every keyboard input by widgets/langsearch.js
+            <div class="h-bar">
+                <form id="search" class="search">
+                    <label for="q"><span class="icon search">${_('Search')}</label>
+                    <input type="text" id="langsearch" placeholder="Search titles" class="search" name="q" autocomplete="off"  autofocus>
+                    <button class="primary">${_('Search')}</button>
+                </form>
+            </div>
+            <nav>
+            <ul class="langlist"> 
+                % for locale, lang in languages:
+                <li class="dropdown-item">
+                    % if locale != request.locale:
+                    <a class="language" href="${i18n_path(locale=locale)}" dir="${th.dir(locale)}" lang="${locale}">${lang}</a>
+                    % else:
+                    <a  href="#" class="language current" dir="${th.dir(locale)}" lang="${locale}"><span class="selected">${lang}</a></span>
+                    % endif
+                </li>
+                % endfor
+            </ul>
+            
+        </nav>
         </header>
         </%block>
 
