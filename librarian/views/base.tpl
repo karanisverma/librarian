@@ -14,15 +14,15 @@
         <%block name="extra_head"/>
     </head>
     <body>
-        <%block name="header">
-        <header class="menu">
-            <div class="menu-subblock">
-                <a class="logo" href="${i18n_url('content:list')}"><span lang="en">Outernet</span></a>
-            </div>
-            <div class="dropdown languages menu-subblock">
-                <a class="dropdown-toggle" href="#"><span class="down-arrow"></span> ${th.lang_name_safe(request.locale)}</a>
-                <ul class="dropdown-body">
-                % for locale, lang in languages:
+##-------------------------------------------------------------------
+
+
+<div class="md-modal md-effect" id="modal-7">
+            <div class="md-content">
+                <h3><input type="text" id="langsearch" placeholder="Search Language" autocomplete="off" ></h3>
+                <div>
+                    <ul class="langlist">
+                     % for locale, lang in languages:
                     <li class="dropdown-item">
                         % if locale != request.locale:
                         <a class="language" href="${i18n_path(locale=locale)}" dir="${th.dir(locale)}" lang="${locale}">${lang}</a>
@@ -32,12 +32,25 @@
                     </li>
                 % endfor
                 </ul>
+                </div>
+                 <button class="md-close">Close me!</button>
             </div>
+        </div>
+
+##-------------------------------------------------------------------
+
+        <%block name="header">
+        <header class="menu">
+            <div class="menu-subblock">
+                <a class="logo" href="${i18n_url('content:list')}"><span lang="en">Outernet</span></a>
+            </div>
+           
             <div class="menu-block-right">
                 <nav id="nav" class="menu-subblock toolbar">
                     % for mi in menu_group('main'):
                         ${mi}
                     % endfor
+                    <a class="md-trigger md-effect"><img type="button" src="../static/img/icons/transbw.png"></img></a> 
                 </nav>
                 <div class="hamburger">
                     <a href="#nav">Site menu</a>
@@ -49,7 +62,7 @@
         <div class="section body">
         <%block name="main">
             <%block name="content">
-                <div class="inner">
+                <div class="inner">                   
                 <%block name="inner">
                     ${self.body(**context.kwargs)}
                 </%block>
@@ -101,5 +114,7 @@
         <%block name="script_templates"/>
         <script src="${assets['js/ui']}"></script>
         <%block name="extra_scripts"/>
+        <div class="md-overlay"></div><!-- the overlay element -->
     </body>
 </html>
+ 

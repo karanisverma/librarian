@@ -1,12 +1,12 @@
 {
-    "css/content-%(version)s.css": "b88598bc", 
+    "css/content-%(version)s.css": "6a21aed4", 
     "css/dashboard-%(version)s.css": "dc20454c", 
-    "css/main-%(version)s.css": "9e6a1495", 
-    "css/wizard-%(version)s.css": "8b51edad", 
-    "js/content-%(version)s.js": "d5d568de", 
+    "css/main-%(version)s.css": "6e1cff19", 
+    "css/wizard-%(version)s.css": "2392c0e8", 
+    "js/content-%(version)s.js": "8ddcdb7c", 
     "js/dashboard-%(version)s.js": "6dab1ac5", 
     "js/files-%(version)s.js": "d969cdea", 
     "js/reader-%(version)s.js": "2f328060", 
-    "js/setup-%(version)s.js": "10ea5fdc", 
-    "js/ui-%(version)s.js": "89f3cc90"
+    "js/setup-%(version)s.js": "e96a4228", 
+    "js/ui-%(version)s.js": "9e079ed7"
 }
